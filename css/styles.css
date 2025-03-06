@@ -24,10 +24,11 @@ header {
 
 
 .label_hedaer {
+    padding: 10px;
+    margin: 60px 0px 0px 0px;
     display: flex; /* flexbox для вирівнювання елементів */
     align-items: center; /* Вирівнювання елементів по вертикалі */
     justify-content: center;
-    padding: 100px 20px 20px 20px;
 }
 
 .name_label {
@@ -40,15 +41,14 @@ header {
 }
 
 .name_label svg {
-    margin-left: 10px; /*  Відступ між текстом і іконкою */
+    margin-left: 15px; /*  Відступ між текстом і іконкою */
 }
 
 .header_msg {
     padding: 10px;
+    margin: 60px 0px 10px 0px;
     display: flex;
     justify-content: center;
-    margin-top: 90px;
-    
 }
 .header_msg p {
     width: 250px;
