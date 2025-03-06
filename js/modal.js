@@ -21,17 +21,20 @@ openModalBtns.forEach(button => {
         // Показуємо модальне вікно та бекдроп
         modal.style.display = "block";
         backdrop.style.display = "block";
+
+        // Блокуємо прокручування сторінки
+        document.body.classList.add("modal-open");
     };
 });
 
-// Функція для закриття модального вікна
+// Функція для закриття модального вікна при натисканні на кнопку закриття
 closeModalBtn.onclick = function() {
     modal.style.display = "none";
     backdrop.style.display = "none";
+
+    // Відновлюємо прокручування сторінки
+    document.body.classList.remove("modal-open");
 };
 
-// Закрити модальне вікно при кліку на бекдроп
-backdrop.onclick = function() {
-    modal.style.display = "none";
-    backdrop.style.display = "none";
-};
+// Видаляємо обробник події для кліку на бекдроп
+// Не додаємо тут жодної функції, щоб він не закривав модальне вікно

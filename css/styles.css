@@ -24,8 +24,8 @@ header {
     z-index: 10;
 }
 
-.collection {
-    margin-top: 250px;
+.set_collection {
+    margin-top: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,7 +57,7 @@ li {
 
 .label_hedaer {
     padding: 10px;
-    margin: 50px 0px 0px 0px;
+    margin: 30px 0px 0px 0px;
     display: flex; /* flexbox для вирівнювання елементів */
     align-items: center; /* Вирівнювання елементів по вертикалі */
     justify-content: center;
@@ -79,7 +79,7 @@ li {
 
 .header_msg {
     padding: 10px;
-    margin: 20px 0px 10px 0px;
+    /* margin: 10px 0px 10px 0px; */
     display: flex;
     justify-content: center;
 }
@@ -105,7 +105,11 @@ li {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: none; /* За замовчуванням приховано */
-    z-index: 100;
+    z-index: 999;
+}
+
+#backdrop {
+    pointer-events: none; /* Не дає можливості взаємодіяти з бекдропом */
 }
 
 /* Модальне вікно */
@@ -120,8 +124,13 @@ li {
     border-radius: 8px;
     z-index: 101;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 500px;
+    width: 300px;
+    height: 500px;
+    z-index: 1000;
+}
+
+body.modal-open {
+    overflow: hidden; /* Блокуємо прокручування сторінки */
 }
 
 /* Стиль для кнопки закриття */
