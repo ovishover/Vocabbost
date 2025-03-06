@@ -57,7 +57,7 @@ li {
 
 .label_hedaer {
     padding: 10px;
-    margin: 30px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
     display: flex; /* flexbox для вирівнювання елементів */
     align-items: center; /* Вирівнювання елементів по вертикалі */
     justify-content: center;
