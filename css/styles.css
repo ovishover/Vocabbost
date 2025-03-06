@@ -1,6 +1,6 @@
 :root {
     --accent-color: #D7C6A8;
-    --text-color: #333333;
+    --text-color: #808080;
     /* --margin-img: 30px;
     --margin-text: 10px;
     --margin-calc: 30px;
@@ -25,7 +25,7 @@ header {
 
 .label_hedaer {
     padding: 10px;
-    margin: 60px 0px 0px 0px;
+    margin: 50px 0px 0px 0px;
     display: flex; /* flexbox для вирівнювання елементів */
     align-items: center; /* Вирівнювання елементів по вертикалі */
     justify-content: center;
@@ -38,6 +38,7 @@ header {
     text-decoration: none; /* Прибираємо підкреслення з посилання */
     font-size: 40px;
     font-weight: 700;
+    margin-left: 25px;
 }
 
 .name_label svg {
@@ -46,7 +47,7 @@ header {
 
 .header_msg {
     padding: 10px;
-    margin: 60px 0px 10px 0px;
+    margin: 20px 0px 10px 0px;
     display: flex;
     justify-content: center;
 }
