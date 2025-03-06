@@ -10,6 +10,7 @@
 </head>
 <body>
     <header>
+        
         <div class="label_hedaer">
             <a href="index.html" class="name_label">Vocabboost
                 <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="_x32_" width="64" height="64" version="1.1" viewBox="0 0 512 512">
@@ -19,11 +20,30 @@
             </a>
         </div>    
         <div class="header_msg">
-            <p>Choose a set of words to practice</p>
+            <p>Choose exercise</p>
         </div>
     </header>
     <section class="main">
-    <div id="sets"></div>
+    <div id="modes" class="modes">
+      <div onclick="startMode('cards')" class="item_modes">Перегляд карток</div>
+      <div onclick="startMode('multipleChoiceUA')" class="item_modes">Обрати переклад (укр.)</div>
+      <div onclick="startMode('anagram')" class="item_modes">Зібрати слово по буквах</div>
+      <div onclick="startMode('multipleChoiceEN')" class="item_modes">Обрати переклад (англ.)</div>
+      <div onclick="startMode('typing')" class="item_modes">Напиши переклад</div>
+      <div onclick="startMode('matchingPairs')" class="item_modes">Підбери пару</div>
+      <div onclick="startMode('bomb')" class="item_modes">Переклади, поки не вибухне бомба</div>
+      <div onclick="startMode('speed')" class="item_modes">Переклади якнайбільше за 60 секунд</div>
+      <!-- <div onclick="startMode('sorting')" class="item_modes">Сортування слів</div> -->
+    </div>
+</section>
+    <div id="gameArea"></div>
+    <div id="score">Правильних відповідей: 0</div>
+    <div id="mistakes"></div>
+    
+    <button onclick="repeatMistakes()" style="display:none;" id="repeatBtn">Продовжити з помилками</button>
+    
+    <a href="index.html">Назад</a>
+    
     <!-- Модальне вікно -->
     <div id="modal" class="modal">
         <div class="modal-content">
@@ -34,10 +54,10 @@
             <div class="start_btn modal_btn" >start</div>
         </div>
     </div>
-    </section>
+
     <!-- Бекдроп -->
     <div id="backdrop" class="backdrop"></div>
-    <script src="./js/script.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>

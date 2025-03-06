@@ -2,7 +2,7 @@
     --accent-color: #D7C6A8;
     --text-color: #aaaaaa;
     --text-color2: #ffffff;
-    --burron-color: #75c1ff;
+    --burron-color: #1596ff;
     /* --margin-img: 30px;
     --margin-text: 10px;
     --margin-calc: 30px;
@@ -12,48 +12,18 @@
 
 /* div {
     outline: 1px solid tomato;
-    background-color: rgb(253, 255, 240);
 } */
 
+
+/*  HEADER */
 header {
     background-color: white;
-    position: fixed;  /* Фіксоване положення, щоб хедер залишався на верху при прокручуванні */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
 }
-
-.set_collection {
-    margin-top: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.іset_list {
-    max-width: 500px;
-    padding: 10px 20px 20px 20px;
-    
-}
-
-li {
-    padding: 10px;
-    height: 70px;
-}
-.set_item {
-    height: 70px;
-    width: 160px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--burron-color);
-    color: var(--text-color2);
-    font-size: 20px;
-    
-}
-
 
 .label_hedaer {
     padding: 10px;
@@ -79,9 +49,13 @@ li {
 
 .header_msg {
     padding: 10px;
+    height: 50px;
     /* margin: 10px 0px 10px 0px; */
     display: flex;
     justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .header_msg p {
     width: 250px;
@@ -92,9 +66,44 @@ li {
     font-family: sans-serif;
 }
 
+/* MAIN */
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 170px;
+    margin-bottom: 50px;
+}
+ #sets, .modes {
+    max-width: 500px;
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+  } 
 
 
 
+.set_button, .item_modes{
+    height: 60px;
+    width: 160px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--burron-color);
+    color: var(--text-color2);
+    font-size: 16px;
+    font-weight: 600;
+    font-family: sans-serif;
+    text-align: center; /* Це для тексту в середині елемента */
+}
+
+
+/* MODAL WINDOW */
 
 /* Бекдроп (затемнення екрану) */
 .backdrop {
@@ -104,12 +113,12 @@ li {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    display: none; /* За замовчуванням приховано */
+    display: none;
     z-index: 999;
 }
 
 #backdrop {
-    pointer-events: none; /* Не дає можливості взаємодіяти з бекдропом */
+    pointer-events: none;
 }
 
 /* Модальне вікно */
@@ -121,7 +130,7 @@ li {
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 20px;
     z-index: 101;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 300px;
@@ -133,16 +142,119 @@ body.modal-open {
     overflow: hidden; /* Блокуємо прокручування сторінки */
 }
 
-/* Стиль для кнопки закриття */
-.close-btn {
+.modal_btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
+    bottom: 30px;
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
     cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стиль для кнопки закриття */
+.close_btn {
+    left: 30px;
+    background-color: rgb(202, 93, 74);
+    color: #ffffff;
+}
+
+.start_btn {
+    right: 30px;
+    background-color: var(--burron-color);
+    color: #ffffff;
 }
 
 /* Стиль для контенту в модальному вікні */
 .modal-content {
     padding: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
