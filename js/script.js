@@ -9,25 +9,32 @@ const startModalBtns = document.querySelectorAll(".start_btn");
 
 // Функція для відкриття модалки
 function openModal(set, words) {
-    modalTitle.textContent = `Set ${set}`;
-    modalContent.textContent = `Details for Set ${set}`;
-    
-    // Виводимо список слів у модалці
-    const wordListHtml = words.map(word => `<li>${word}</li>`).join('');
-    modalWordList.innerHTML = `<h4>Слова:</h4><ul>${wordListHtml}</ul>`;
+  modalTitle.textContent = `Set ${set}`;
 
-    // Додаємо функціонал переходу на сторінку тренування
-    startModalBtns.forEach(btn => {
-        btn.onclick = () => {
-            window.location.href = `training.html?set=${set}`;
-        };
-    });
+  console.log("Отримані слова для модалки:", words); // Дебагінг
 
-    // Показуємо модальне вікно
-    modal.style.display = "block";
-    backdrop.style.display = "block";
-    document.body.classList.add("modal-open");
+  if (!Array.isArray(words) || words.length === 0) {
+      modalWordList.innerHTML = "<p>Список слів не знайдено</p>";
+      return;
+  }
+
+  const wordListHtml = words.map(word => {
+      return `<li class="list_item"><div>${word.word}</div><div>${word.translate}</div></li>`;
+  }).join('');
+
+  modalWordList.innerHTML = `<ul>${wordListHtml}</ul>`;
+
+  startModalBtns.forEach(btn => {
+      btn.onclick = () => {
+          window.location.href = `training.html?set=${set}`;
+      };
+  });
+
+  modal.style.display = "block";
+  backdrop.style.display = "block";
+  document.body.classList.add("modal-open");
 }
+
 
 // Закриваємо модалку
 closeModalBtn.onclick = function() {
@@ -51,9 +58,9 @@ fetch('words.json')
         btn.textContent = `Set ${set}`;
 
         btn.onclick = () => {
-            const wordList = words.filter(word => word.set == set).map(word => word.word);
-            openModal(set, wordList);
-        };
+          const wordList = words.filter(word => word.set == set);
+          openModal(set, wordList); // Передаємо повний об'єкт, а не лише англ. слова
+      };
 
         container.appendChild(btn);
     });
