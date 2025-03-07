@@ -36,14 +36,21 @@
       <!-- <div onclick="startMode('sorting')" class="item_modes">Сортування слів</div> -->
     </div>
 </section>
+<section id="answ_section" class="hidden">
     <div id="gameArea"></div>
     <div id="score">Правильних відповідей: 0</div>
     <div id="mistakes"></div>
     
     <button onclick="repeatMistakes()" style="display:none;" id="repeatBtn">Продовжити з помилками</button>
     
-    <a href="index.html">Назад</a>
+    <div class="train_list set_button">
+        <a href="index.html" >До наборів слів</a>
+        <button onclick="goBackToTrainings()" id="backToTrainingsBtn" style="display:none;">Повернутися до тренувань</button>
+
+    </div>
+
     
+</section>
     <!-- Модальне вікно -->
     <div id="modal" class="modal">
         <div class="modal-content">
