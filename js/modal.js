@@ -55,5 +55,3 @@ startModalBtns.forEach(btn => {
         window.location.href = `training.html?set=${set}`;
     };
 });
-
-// 

@@ -136,5 +136,3 @@
       startMode('anagram');
     }
     
-
-    // 
