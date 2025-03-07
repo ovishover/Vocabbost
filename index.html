@@ -23,21 +23,23 @@
         </div>
     </header>
     <section class="main">
-    <div id="sets"></div>
-    <!-- Модальне вікно -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <div class="close_btn modal_btn" id="closeModalBtn">back</div>
-        
-            <h2 id="modalTitle">Це модальне вікно</h2>
-            <p id="modalContent">Тут може бути ваш контент.</p>
-            <div class="start_btn modal_btn" >start</div>
+        <div id="sets"></div> <!-- Контейнер для кнопок наборів -->
+
+        <!-- Модальне вікно -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <h2 id="modalTitle">Це модальне вікно</h2>
+                <p id="modalContent">Тут може бути ваш контент.</p>
+                <div id="modalWordList"></div> <!-- Сюди буде додаватися список слів -->
+                <div class="close_btn modal_btn" id="closeModalBtn">back</div>
+                <div class="start_btn modal_btn">start</div>
+            </div>
         </div>
-    </div>
-    </section>
-    <!-- Бекдроп -->
-    <div id="backdrop" class="backdrop"></div>
+        
+        <!-- Бекдроп -->
+        <div id="backdrop" class="backdrop"></div>
     <script src="./js/script.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/training.js"></script>
 </body>
 </html>
