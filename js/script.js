@@ -80,6 +80,7 @@
       repeatBtn.onclick = () => startMode("anagram");
   }
 
+  
   // ======== НАВІГАЦІЯ ПО КНОПКАМ ==========
   function toggleVisibility(elementsToHide, elementsToShow, backToTrainListVisibility = 'none') {
       elementsToHide.forEach(el => el && (el.style.display = 'none'));
