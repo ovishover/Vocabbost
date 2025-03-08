@@ -23,16 +23,43 @@
         </div>
     </header>
     <section id="train_list">
+
+        </div>
         <div id="modes" class="container">
-            <div onclick="startMode('cards')" class="item_modes hide_button">Перегляд карток</div>
-            <div onclick="startMode('multipleChoiceUA')" class="item_modes hide_button">Обрати переклад (укр.)</div>
-            <div onclick="startMode('anagram')" class="item_modes hide_button">Зібрати слово по буквах</div>
-            <div onclick="startMode('multipleChoiceEN')" class="item_modes hide_button">Обрати переклад (англ.)</div>
-            <div onclick="startMode('typing')" class="item_modes hide_button">Напиши переклад</div>
-            <div onclick="startMode('matchingPairs')" class="item_modes hide_button">Підбери пару</div>
-            <div onclick="startMode('bomb')" class="item_modes hide_button">Переклади, поки не вибухне бомба</div>
-            <div onclick="startMode('speed')" class="item_modes hide_button">Переклади якнайбільше за 60 секунд</div>
-            <!-- <div onclick="startMode('sorting')" class="item_modes">Сортування слів</div> -->
+            <ul class="trainList">
+
+            <li class="trainItems">
+                <img src="./images/img4.jpg" alt="training" class="demoImg">
+                <div class="btnContain">
+                    <div onclick="startMode('cards')" class="item_modes hide_button">Word memorizing</div>
+                </div>
+            </li>
+            <li class="trainItems">
+                <img src="./images/img3.jpg" alt="training" class="demoImg">
+                <div class="btnContain">
+                    <div onclick="startMode('matchingPairs')" class="item_modes hide_button">Pick a Pair</div>
+                </div>
+            </li>
+            <li class="trainItems">
+                <img src="./images/img3.jpg" alt="training" class="demoImg">
+                <div class="btnContain">
+                    <div onclick="startMode('anagram')" class="item_modes hide_button">Anagram</div>
+                </div>
+            </li>
+            <li class="trainItems">
+                <img src="./images/img3.jpg" alt="training" class="demoImg">
+                <div class="btnContain">
+                    <div onclick="startMode('multipleChoiceEN')" class="item_modes hide_button">Word translation</div>
+                </div>
+            </li>
+            <li class="trainItems">
+                <img src="./images/img3.jpg" alt="training" class="demoImg">
+                <div class="btnContain">
+                    <div onclick="startMode('bomb')" class="item_modes hide_button">Countdown to Boom</div>
+                </div>
+            </li>
+            </ul>
+
         </div>
        
          
@@ -50,11 +77,12 @@
     </section>
     <section id="bottom_menu" class="">
         <div class="container">
-            <div id="backToSets" class="set_button backToMain">До вибору наборів слів
+            <div id="backToSets" class="backToMain">
+                <p class="name_button">Back to sets list</p>
             
             </div> 
             <div id="backToTrainList" class="set_button hidden">
-                Повернутися до списку тренувань
+                <p class="name_button">Back to train list</p>
             </div>
         </div>
     </section>

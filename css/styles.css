@@ -3,6 +3,7 @@
     --text-color: #aaaaaa;
     --text-color2: #ffffff;
     --burron-color: #1596ff;
+    --margin-calc: 10px;
     /* --margin-img: 30px;
     --margin-text: 10px;
     --margin-calc: 30px;
@@ -16,7 +17,7 @@
 
 .container {
     max-width: 500px;
-        padding-top: 10px;
+        /* padding-top: 10px; */
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -62,8 +63,6 @@ header {
     /* margin: 10px 0px 10px 0px; */
     display: flex;
     justify-content: center;
-    display: flex;
-    justify-content: center;
     align-items: center;
 }
 .header_msg p {
@@ -97,8 +96,8 @@ section {
   }  */
 
 .set_button, .item_modes{
-    height: 60px;
-    width: 160px;
+    height: 50px;
+    width: 140px;
     margin: 10px;
     padding: 10px;
     border-radius: 15px;
@@ -109,12 +108,62 @@ section {
     background-color: var(--burron-color);
     color: var(--text-color2);
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     font-family: sans-serif;
     }
 
 #bottom_menu {
 
+}
+
+
+.trainList  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trainItems {
+    border-radius: 0px 0px 15px 15px;
+    background-color: #ffffff;
+    flex-basis: calc(90% / 2 - var(--margin-calc));
+    margin: 10px;
+
+}
+
+.btnContain {
+    height: 100px;
+    align-content: center;
+}
+.demoImg{
+    display: block;
+    max-width: 100%;
+    height: auto;
+        align-items: center; */
+    /* /* justify-content: center; */
+}
+
+
+.name_button {
+    width: 130px;
+    font-weight: 600;
+}
+
+#backToSets, #backToTrainList {
+    background-color: rgb(81, 86, 165);
+    height: 50px;
+    width: 140px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Це для тексту в середині елемента */
+    color: var(--text-color2);
+    font-size: 16px;
+    font-weight: 500;
+    font-family: sans-serif;
 }
 
 #backToTrainList {
