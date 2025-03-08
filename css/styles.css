@@ -3,7 +3,7 @@
     --text-color: #aaaaaa;
     --text-color2: #ffffff;
     --burron-color: #1596ff;
-    --margin-calc: 10px;
+    --margin-calc: 40px;
     /* --margin-img: 30px;
     --margin-text: 10px;
     --margin-calc: 30px;
@@ -20,8 +20,8 @@
         /* padding-top: 10px; */
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-evenly;
+        /* align-items: center; */
+        justify-content: space-between;
 }
 
 /*  HEADER */
@@ -78,7 +78,7 @@ section {
     width: 100%;
     margin: 0;
     justify-items: center;
-    padding-top: 10px;
+    /* padding-top: 10px; */
     padding-bottom: 10px;
 }
 
@@ -95,10 +95,17 @@ section {
     justify-content: space-evenly;
   }  */
 
+  #sets {
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+    justify-content: center;
+  }
 .set_button, .item_modes{
-    height: 50px;
-    width: 140px;
-    margin: 10px;
+    height: 45px;
+    width: 120px;
+    margin: 10px 15px 10px 15px;
     padding: 10px;
     border-radius: 15px;
     display: flex;
@@ -113,6 +120,8 @@ section {
     }
 
 #bottom_menu {
+    margin-bottom: 150px;
+    /* display: flex; */
 
 }
 
@@ -126,7 +135,7 @@ section {
 .trainItems {
     border-radius: 0px 0px 15px 15px;
     background-color: #ffffff;
-    flex-basis: calc(90% / 2 - var(--margin-calc));
+    flex-basis: calc(100% / 2 - var(--margin-calc));
     margin: 10px;
 
 }
@@ -134,6 +143,7 @@ section {
 .btnContain {
     height: 100px;
     align-content: center;
+    justify-items: center;
 }
 .demoImg{
     display: block;
