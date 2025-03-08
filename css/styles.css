@@ -14,9 +14,18 @@
     outline: 1px solid tomato;
 } */
 
+.container {
+    max-width: 500px;
+        padding-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+}
 
 /*  HEADER */
 header {
+    justify-items: center;
     background-color: white;
     position: fixed;
     top: 0;
@@ -38,7 +47,7 @@ header {
     display: flex; /* flexbox для вирівнювання тексту і іконки */
     align-items: center; /* Вирівнювання тексту та іконки по вертикалі */
     text-decoration: none; /* Прибираємо підкреслення з посилання */
-    font-size: 40px;
+    font-size: 34px;
     font-weight: 700;
     margin-left: 25px;
 }
@@ -48,7 +57,7 @@ header {
 }
 
 .header_msg {
-    padding: 10px;
+    /* padding: 10px; */
     height: 50px;
     /* margin: 10px 0px 10px 0px; */
     display: flex;
@@ -61,29 +70,31 @@ header {
     width: 250px;
     text-align: center;
     color: var(--text-color);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     font-family: sans-serif;
 }
 
-/* MAIN */
-.main {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 170px;
-    margin-bottom: 50px;
+section {
+    width: 100%;
+    margin: 0;
+    justify-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
- #sets, .modes {
-    max-width: 500px;
+
+
+/* MAIN */
+
+
+ /* #sets, #modes {
+    width: 100%;
     padding-top: 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-  } 
-
-
+  }  */
 
 .set_button, .item_modes{
     height: 60px;
@@ -94,14 +105,21 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center; /* Це для тексту в середині елемента */
     background-color: var(--burron-color);
     color: var(--text-color2);
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     font-family: sans-serif;
-    text-align: center; /* Це для тексту в середині елемента */
+    }
+
+#bottom_menu {
+
 }
 
+#backToTrainList {
+    display: none;
+}
 
 /* MODAL WINDOW */
 
@@ -144,13 +162,11 @@ body.modal-open {
 }
 
 .modal_btn {
-    /* position: absolute;
-    bottom: 30px; */
     width: 100px;
     height: 40px;
     padding: 5px;
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.05em;
     cursor: pointer;
     border-radius: 10px;
@@ -180,21 +196,21 @@ margin: 15px;
 
 /* Стиль для контенту в модальному вікні */
 .modal-content {
-    padding: 10px;
+    padding: 25px 0px 0px 0px;
     background-color: #ffffff;
     border-radius: 10px;
 }
 
 #modalWordList{
-    padding: 10px;
-    margin-top: 10px;
+    padding: 15px 10px 15px 10px;
 }
 
 #modalTitle {
     
-    margin-left: 10px;
+    margin-left: 20px;
     color: var(--text-color);
     font-size: 26px;
+    font-weight: 600;
 
 }
 
@@ -211,7 +227,7 @@ margin: 15px;
 .list_item div {
     display: block;
     width: 125px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     align-items: center;
     text-align: center;

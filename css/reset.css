@@ -21,13 +21,10 @@ button {
   cursor: pointer;
 }
 
-section {
-  margin: 0;
-}
 
 body {
   font-family: Roboto, sans-serif;
-  padding: 0px;
+  padding: 130px 0px 0px 0px;
   margin: 0px;
   /* max-width: 900px; */
   background-color: #f7f6f6;
@@ -46,6 +43,7 @@ img {
   max-width: 100%;
   height: auto;
 } 
+
 
 .hidden {
   display: none;

@@ -8,6 +8,8 @@ const modalTitle = document.getElementById("modalTitle");
 const modalWordList = document.getElementById("modalWordList");
 const startModalBtns = document.querySelectorAll(".start_btn");
 const trainList = document.querySelectorAll(".train_list");
+const trainButtons = document.querySelectorAll(".hide_button");
+const backToMainButtons = document.querySelectorAll(".backToMain");
 
 // Функція для відкриття модалки
 function openModal(set, words) {
@@ -89,7 +91,6 @@ function startMode(mode) {
   }
 
   document.getElementById("answ_section").classList.remove("hidden");
-  document.getElementById("modes").classList.add("hidden"); // Ховаємо список тренувань
   document.getElementById("backToTrainingsBtn").style.display = 'block'; // Показуємо кнопку для повернення до тренувань
 
   correctAnswers = 0;
@@ -162,16 +163,53 @@ function repeatMistakes() {
   startMode("anagram");
 }
 
+
+
+// Для кожної кнопки додаємо обробник події
+backToMainButtons.forEach(button => {
+  button.onclick = function () {
+    window.location.href = 'index.html'; // Перехід на головну сторінку
+  };
+});
+
 document.getElementById("repeatBtn").onclick = repeatMistakes;
 
-// Функція для повернення до списку тренувань
-function goBackToTrainings() {
-  document.getElementById("answ_section").classList.add("hidden"); // Приховуємо секцію тренування
-  document.getElementById("modes").classList.remove("hidden"); // Показуємо секцію тренувань
-  document.getElementById("backToTrainingsBtn").style.display = 'none'; // Приховуємо кнопку "Повернутися"
+
+
+
+function hideTrainingsList() {
+  document.getElementById("train_list").style.display = 'none';
+  document.getElementById("backToSets").style.display = 'none';
+  document.getElementById("answ_section").style.display = 'block';
+  document.getElementById("backToTrainList").style.display = 'flex';
+  // document.getElementById("hidebuttom").style.display = 'none';
 }
 
-// Функція для приховування списку тренувань
-function hideTrainingsList() {
-  document.getElementById("modes").classList.add("hidden"); // Ховаємо список тренувань
+function showTrainList() {
+  document.getElementById("train_list").style.display = 'block';
+  document.getElementById("answ_section").style.display = 'none';
+  document.getElementById("backToSets").style.display = 'flex';
+  document.getElementById("backToTrainList").style.display = 'none';
 }
+
+// Для кожної кнопки додаємо обробник події на клік
+trainButtons.forEach(button => {
+  button.addEventListener("click", hideTrainingsList);
+});
+
+// Додаємо обробник події для кнопки
+document.getElementById("backToTrainList").addEventListener("click", showTrainList);
+
+
+
+
+
+
+
+// Функція для повернення до списку тренувань
+// function goBackToTrainings() {
+//   document.getElementById("answ_section").classList.add("hidden"); // Приховуємо секцію тренування
+//   document.getElementById("modes").classList.remove("hidden"); // Показуємо секцію тренувань
+//   document.getElementById("backToTrainingsBtn").style.display = 'none'; // Приховуємо кнопку "Повернутися"
+//   document.getElementById(".bottom_menu").classList.add("hidden"); 
+// }

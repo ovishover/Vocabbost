@@ -12,7 +12,7 @@
     <header>
         <div class="label_hedaer">
             <a href="index.html" class="name_label">Vocabboost
-                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="_x32_" width="64" height="64" version="1.1" viewBox="0 0 512 512">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="_x32_" width="48" height="48" version="1.1" viewBox="0 0 512 512">
                     <style>.st0{fill:#D7C6A8}</style>
                     <path d="M219.363 109.356 113.285 237.075.003 250.793 85.082 139.59zM402.644 292.637 274.925 398.715l-13.718 113.281 111.203-85.062zM500.785 133.325c18.172-51.828 12.641-99.359-5.047-117.063-17.703-17.688-65.234-23.219-117.047-5.047l122.094 122.11zM491.113 156.528 355.472 20.887c-23.219 11.266-46.531 27.469-67.719 49.672-60.718 63.594-155.703 188.172-155.703 188.172l110.406 110.391 10.813 10.828s124.594-94.969 188.172-155.703c22.204-21.188 38.407-44.5 49.672-67.719zm-203.375 67.734c-21.219-21.219-21.219-55.609 0-76.844 21.219-21.219 55.625-21.219 76.844 0 21.219 21.234 21.219 55.625-.016 76.844-21.203 21.219-55.609 21.219-76.828 0zM190.925 391.2 178.8 379.075c-13.844 51.828-81.734 69.796-81.734 69.796s25.969-31.734 27.422-53.39c1.844-27.516-8.656-17.313-21.641-11.547-14.219 6.313-36.813 6.5-36.813 6.5s10.828-9.375 22.359-32.469c7.906-15.813 26.156-24.188 41.844-27.453l-9.438-9.438c-18.406-13.797-47.547.078-61.609 24.969-11.328 20.016-31.5 68.156-53.359 69.296 13.813 11.5 33.344 17.234 57.484 6.906 24.141-10.359 29.906 0 10.344 19.531-12.688 12.703-58.625 28.734-59.766 52.875 26.438-5.734 80.078 3.219 118.406-14.938 43.673-20.686 65.517-60.92 58.626-88.513z" class="st0"/>
                 </svg>
@@ -23,24 +23,29 @@
         </div>
     </header>
     <section class="main">
-        <div id="sets"></div> <!-- Контейнер для кнопок наборів -->
+        <div id="sets" class="container">
+
+        </div> <!-- Контейнер для кнопок наборів -->
 
         <!-- Модальне вікно -->
         <div id="modal" class="modal">
             <div class="modal-content">
-                <h2 id="modalTitle">Це модальне вікно</h2>
+                <p id="modalTitle">Це модальне вікно</p>
                 <!-- <p id="modalContent">Тут може бути ваш контент.</p> -->
                 <div id="modalWordList"></div> <!-- Сюди буде додаватися список слів -->
                 
             </div>
             <div class="modal_btn_container">
-            <div class="close_btn modal_btn" id="closeModalBtn">back</div>
-            <div class="start_btn modal_btn">start</div>
+                <div class="close_btn modal_btn" id="closeModalBtn">back</div>
+                <div class="start_btn modal_btn">start</div>
             </div>
         </div>
-        
-        <!-- Бекдроп -->
-        <div id="backdrop" class="backdrop"></div>
+    </section>
+    <section class="bottom_menu">
+        <div class="container"></div>
+    </section>
+    <!-- Бекдроп -->
+    <div id="backdrop" class="backdrop"></div>
     <script src="./js/script.js"></script>
     <!-- <script src="./js/modal.js"></script> -->
     <!-- <script src="./js/training.js"></script> -->
