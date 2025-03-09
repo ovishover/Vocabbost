@@ -35,7 +35,7 @@ async function loadWords() {
 
 loadWords(); // викликаємо функцію завантаження слів
 
-
+modalTitle.cardTitle = `Set #${set}`;
 // ======== ФУНКЦІЯ ВІДКРИТТЯ МОДАЛКИ ========
 function openModal(set, words) {
     modalTitle.textContent = `Set ${set}`;

@@ -26,7 +26,7 @@
         <div id="modes" class="container">
             <ul class="trainList">
 
-            <li class="trainItems">
+            <li onclick="startGame()" class="trainItems" >
                 <img src="./images/img6.jpg" alt="training" class="demoImg">
                 <div class="btnContain">
                     <div class="item_modes">Word memorizing</div>
@@ -57,13 +57,31 @@
          
     </section>
     <section id="answ_section" class="hidden">
-        <div class="container">
-            <div id="gameArea"></div>
+        <div class="container cardContent cardStyles">
+            <div><p id="cardTitle">Set #</p></div>
+            <div class="cardWord">
+                <div id="word"></div>
+                <div id="translation"></div>
+            </div>
+           
+            <div class="cardBtn">
+                <div onclick="showPreviousWord()" class="set_button">
+                    <p class="name_button">Попереднє слово</p>
+                
+                </div> 
+                <div onclick="showNextWord()" class="set_button">
+                    <p class="name_button">Наступне слово</p>
+                </div>
+            </div>
+            <!-- <button onclick="showPreviousWord()">Попереднє слово</button>
+            <button onclick="showNextWord()">Наступне слово</button> -->
+
+            <!-- <div id="gameArea"></div>
             <div id="score">Правильних відповідей: 0</div>
             <div id="mistakes"></div>
     
             <button onclick="repeatMistakes()" style="display:none;" id="repeatBtn">Продовжити з помилками</button>
-    
+     -->
           
         </div>
     </section>
@@ -90,7 +108,7 @@
     </div>
     <!-- Бекдроп -->
     <div id="backdrop" class="backdrop"></div>
-    <script type="module" src="./js/script2.js"></script>
-    <script type="module" src="./js/script3.js"></script>
+    <script src="./js/script2.js"></script>
+    <script src="./js/script3.js"></script>
 </body>
 </html>

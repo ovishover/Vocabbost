@@ -1,49 +1,138 @@
-// ======== СКРИПТ ДЛЯ СТОРІНКИ ТРЕНУВАНЬ ==========
+let currentIndex = 0; // Позиція поточного слова в масиві
+        let shuffledWords = []; // Перемішаний набір слів
+        let selectedWords = []; // Масив вибраних слів
 
+        // Функція для отримання параметра з URL
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
 
+        // Функція для перемішування масиву
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]]; // Міняємо місцями елементи
+            }
+        }
 
-// /// Функція для отримання параметра з URL
-// function getUrlParameter(name) {
-//   const urlParams = new URLSearchParams(window.location.search);
-//   return urlParams.get(name);
-// }
+        // Перемішуємо слова перед початком гри
+        function shuffleWords() {
+            // Перевіряємо, чи є selectedWords
+            if (selectedWords.length === 0) {
+                console.error("Немає слів для перемішування.");
+                return;
+            }
 
-// // Функція для завантаження слів
-// async function loadTrainingWords() {
-//   const setNumber = getUrlParameter('set'); // Отримуємо номер сету з URL
-//   if (!setNumber) {
-//       console.error("Номер сету не вказаний в URL.");
-//       return;
-//   }
+            shuffledWords = [...selectedWords]; // Копіюємо масив слів
+            shuffleArray(shuffledWords); // Перемішуємо його
+            showWord(currentIndex); // Показуємо перше слово
+        }
 
-//   try {
-//       // Завантажуємо дані з JSON
-//       const response = await fetch('words.json');
-//       const words = await response.json();
+        // Функція для завантаження слів
+        async function loadTrainingWords() {
+            const setNumber = getUrlParameter('set');
+            console.log('Отриманий номер сету:', setNumber);  // Додайте це для перевірки
+            if (!setNumber) {
+                console.error("Номер сету не вказаний в URL.");
+                return;
+            }
 
-//       // Фільтруємо слова для відповідного сету
-//       const selectedWords = words.filter(word => word.set == setNumber);
+            try {
+                // Завантажуємо дані з JSON
+                const response = await fetch('words.json');
+                const words = await response.json();
 
-//       if (selectedWords.length === 0) {
-//           console.error(`Немає слів для сету ${setNumber}.`);
-//           return;
-//       }
+                // Перевірка на те, чи дані були завантажені
+                if (!Array.isArray(words)) {
+                    console.error("Дані у файлі words.json мають неправильний формат.");
+                    return;
+                }
 
-//       // Логіка успішного завантаження набору
-//       console.log(`Набір слів для Set ${setNumber} успішно завантажено!`);
+                // Фільтруємо слова для відповідного сету
+                selectedWords = words.filter(word => word.set == setNumber);
 
-//       // Зберігаємо набір слів у глобальній змінній
-//       window.selectedWords = selectedWords;
+                // Якщо немає слів для вказаного сету, вивести помилку
+                if (selectedWords.length === 0) {
+                    console.error(`Немає слів для сету ${setNumber}.`);
+                    return;
+                }
 
-//       // Перевірка, чи набір слів завантажено
-//       console.log(window.selectedWords);
+                // Логіка успішного завантаження набору
+                console.log(`Набір слів для Set ${setNumber} успішно завантажено!`);
+                const cardTitleElement = document.getElementById('cardTitle');
+                const cardTitle = cardTitleElement.textContent; // Отримуємо текст
+                cardTitleElement.textContent = `Set #${setNumber}`; // Присвоюємо новий текст
+                
+                // Після завантаження слів, перемішуємо їх
+                shuffleWords();
 
-//   } catch (error) {
-//       console.error("Помилка при завантаженні даних для тренування:", error);
-//   }
-// }
+            } catch (error) {
+                console.error("Помилка при завантаженні даних для тренування:", error);
+            }
+        }
 
-// // Викликаємо функцію завантаження слів при завантаженні сторінки
-// loadTrainingWords();
+        // Викликаємо функцію завантаження слів при натисканні кнопки
+        function startGame() {
+            loadTrainingWords();
+        }
 
+// Показати слово та його переклад
+function showWord(index) {
+    console.log("showWord called with index:", index); // Лог для перевірки індексу
+    const wordObj = shuffledWords[index]; // Отримуємо об'єкт слова
+    if (!wordObj) {
+        console.error("Немає слова для показу.");
+        return;
+    }
+    console.log("wordObj:", wordObj); // Лог для перевірки об'єкта слова
+    document.getElementById('word').textContent = wordObj.word;
+    document.getElementById('translation').textContent = wordObj.translate;
+}
 
+// Показати наступне слово
+function showNextWord() {
+    if (currentIndex < shuffledWords.length - 1) {
+        currentIndex++;
+        console.log("showNextWord called, new index:", currentIndex); // Лог для нового індексу
+        showWord(currentIndex);
+    } else {
+        console.log("Немає наступного слова.");
+        endGame();  // Викликаємо завершення гри
+    }
+}
+
+// Показати попереднє слово
+function showPreviousWord() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        console.log("showPreviousWord called, new index:", currentIndex); // Лог для нового індексу
+        showWord(currentIndex);
+    } else {
+        console.log("Немає попереднього слова.");
+    }
+}
+
+// const cardTitleElement = document.getElementById('cardTitle');
+// const cardTitle = cardTitleElement.textContent; // Отримуємо текст
+// cardTitleElement.textContent = `Set #${setNumber}`; // Присвоюємо новий текст
+
+// Функція завершення гри
+function endGame() {
+    alert("Гра завершена! Ви пройшли всі слова."); // Вивести повідомлення
+    // Додаємо кнопку для перезапуску
+    const restartButton = document.createElement('buttonRestart');
+    restartButton.textContent = 'Перезапустити гру';
+    restartButton.onclick = restartGame;
+    document.body.appendChild(restartButton);
+}
+
+// Функція перезапуску гри
+function restartGame() {
+    loadTrainingWords()
+    console.log("Гра перезапущена!");
+    currentIndex = 0;  // Скидаємо індекс на початок
+    showWord(currentIndex);  // Відображаємо перше слово
+    const restartButton = document.querySelector('buttonRestart');
+    restartButton.remove();  // Видаляємо кнопку для перезапуску
+}
