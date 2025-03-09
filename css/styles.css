@@ -103,7 +103,7 @@ section {
     justify-content: center;
   }
 .set_button, .item_modes{
-    height: 45px;
+    height: 40px;
     width: 120px;
     margin: 10px 15px 10px 15px;
     padding: 10px;
@@ -141,7 +141,7 @@ section {
 }
 
 .btnContain {
-    height: 100px;
+    height: 85px;
     align-content: center;
     justify-items: center;
 }

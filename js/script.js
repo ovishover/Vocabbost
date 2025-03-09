@@ -87,7 +87,7 @@
       if (backToTrainList) backToTrainList.style.display = backToTrainListVisibility;
   }
 
-  document.querySelectorAll(".hide_button").forEach(button => {
+  document.querySelectorAll(".trainItems").forEach(button => {
       button.addEventListener("click", () => {
           toggleVisibility([trainList, backToSets], [answSection, backToTrainList], 'flex');
       });
