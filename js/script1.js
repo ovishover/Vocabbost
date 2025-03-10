@@ -1,5 +1,4 @@
-// // ======== СКРИПТ ДЛЯ ГОЛОВНОЇ СТОРІНКИ ==========
-
+// ======== СКРИПТ ДЛЯ ГОЛОВНОЇ СТОРІНКИ ==========
 
 // ======== ЗАВАНТАЖЕННЯ СЛІВ ========
 async function loadWords() {
@@ -35,9 +34,19 @@ async function loadWords() {
 
 loadWords(); // викликаємо функцію завантаження слів
 
-modalTitle.cardTitle = `Set #${set}`;
+
 // ======== ФУНКЦІЯ ВІДКРИТТЯ МОДАЛКИ ========
 function openModal(set, words) {
+    const modal = document.getElementById('modal');
+    const backdrop = document.getElementById('backdrop');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalWordList = document.getElementById('modalWordList');
+    
+    if (!modal || !backdrop || !modalTitle || !modalWordList) {
+        console.error("Один з елементів модалки не знайдений!");
+        return;
+    }
+
     modalTitle.textContent = `Set ${set}`;
 
     if (!Array.isArray(words) || words.length === 0) {
@@ -51,7 +60,7 @@ function openModal(set, words) {
 
     modal.style.display = "block";
     backdrop.style.display = "block";
-    document.body.classList.add("modal-open");
+    modal.classList.add("modal-open"); // Додаємо клас modal-open до елемента modal
 
     // Кнопка "Start" для переходу на сторінку тренування
     const startModalBtns = document.querySelectorAll(".start_btn");
@@ -66,11 +75,22 @@ function openModal(set, words) {
     }
 }
 
+
 // ======== ФУНКЦІЯ ЗАКРИТТЯ МОДАЛКИ ========
+const closeModalBtn = document.getElementById('closeModalBtn'); // перевірка кнопки закриття
+const modal = document.getElementById('modal');
+const backdrop = document.getElementById('backdrop');
+
 if (closeModalBtn) {
     closeModalBtn.onclick = function () {
-        modal.style.display = "none";
-        backdrop.style.display = "none";
-        document.body.classList.remove("modal-open");
+        if (modal && backdrop) {
+            modal.style.display = "none";
+            backdrop.style.display = "none";
+            modal.classList.remove("modal-open"); // Видаляємо клас modal-open з елемента modal
+        } else {
+            console.error("Елементи модалки або бекдропу не знайдені!");
+        }
     };
+} else {
+    console.error("Кнопка закриття модалки не знайдена!");
 }

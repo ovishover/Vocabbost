@@ -5,7 +5,7 @@
 //   // ======== ОТРИМАННЯ ЕЛЕМЕНТІВ ==========
 const trainList = document.getElementById("train_list");
 const backToSets = document.getElementById("backToSets");
-const answSection = document.getElementById("answ_section");
+const answSection = document.getElementById("game_area");
 
 function toggleVisibility(elementsToHide, elementsToShow, backToTrainListVisibility = 'none') {
     elementsToHide.forEach(el => el && (el.style.display = 'none'));
