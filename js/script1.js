@@ -1,5 +1,6 @@
 // ======== СКРИПТ ДЛЯ ГОЛОВНОЇ СТОРІНКИ ==========
 
+
 // ======== ЗАВАНТАЖЕННЯ СЛІВ ========
 async function loadWords() {
     try {
@@ -41,8 +42,10 @@ function openModal(set, words) {
     const backdrop = document.getElementById('backdrop');
     const modalTitle = document.getElementById('modalTitle');
     const modalWordList = document.getElementById('modalWordList');
-    
-    if (!modal || !backdrop || !modalTitle || !modalWordList) {
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const startModalBtns = document.querySelectorAll(".start_btn");
+
+    if (!modal || !backdrop || !modalTitle || !modalWordList || !closeModalBtn || !startModalBtns) {
         console.error("Один з елементів модалки не знайдений!");
         return;
     }
@@ -60,10 +63,10 @@ function openModal(set, words) {
 
     modal.style.display = "block";
     backdrop.style.display = "block";
-    modal.classList.add("modal-open"); // Додаємо клас modal-open до елемента modal
+    modal.classList.add("modal-open");
 
     // Кнопка "Start" для переходу на сторінку тренування
-    const startModalBtns = document.querySelectorAll(".start_btn");
+    
     if (startModalBtns.length > 0) {
         startModalBtns.forEach(btn => {
             btn.onclick = () => {
@@ -75,18 +78,14 @@ function openModal(set, words) {
     }
 }
 
-
 // ======== ФУНКЦІЯ ЗАКРИТТЯ МОДАЛКИ ========
-const closeModalBtn = document.getElementById('closeModalBtn'); // перевірка кнопки закриття
-const modal = document.getElementById('modal');
-const backdrop = document.getElementById('backdrop');
 
 if (closeModalBtn) {
     closeModalBtn.onclick = function () {
         if (modal && backdrop) {
             modal.style.display = "none";
             backdrop.style.display = "none";
-            modal.classList.remove("modal-open"); // Видаляємо клас modal-open з елемента modal
+            modal.classList.remove("modal-open");
         } else {
             console.error("Елементи модалки або бекдропу не знайдені!");
         }
