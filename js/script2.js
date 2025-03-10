@@ -117,22 +117,34 @@ function showPreviousWord() {
 // const cardTitle = cardTitleElement.textContent; // Отримуємо текст
 // cardTitleElement.textContent = `Set #${setNumber}`; // Присвоюємо новий текст
 
+
 // Функція завершення гри
 function endGame() {
-    alert("Гра завершена! Ви пройшли всі слова."); // Вивести повідомлення
-    // Додаємо кнопку для перезапуску
-    const restartButton = document.createElement('buttonRestart');
+    console.log("Гра завершена! Ви пройшли всі слова."); // Вивести повідомлення
+    
+   // Перевіряємо, чи кнопка вже є на сторінці
+const existingButton = document.querySelector('.restartButton');
+
+if (!existingButton) {
+    // Якщо кнопка ще не існує, створюємо її
+    const restartButton = document.createElement('div');
+    restartButton.classList.add('restartButton', 'set_button'); // Додаємо клас для ідентифікації
     restartButton.textContent = 'Перезапустити гру';
     restartButton.onclick = restartGame;
     document.body.appendChild(restartButton);
 }
+}
 
 // Функція перезапуску гри
 function restartGame() {
-    loadTrainingWords()
+    loadTrainingWords();  // Завантажуємо нові слова
     console.log("Гра перезапущена!");
     currentIndex = 0;  // Скидаємо індекс на початок
     showWord(currentIndex);  // Відображаємо перше слово
-    const restartButton = document.querySelector('buttonRestart');
-    restartButton.remove();  // Видаляємо кнопку для перезапуску
+    
+    // Видаляємо кнопку після перезапуску
+    const restartButton = document.querySelector('.restartButton');
+    if (restartButton) {
+        restartButton.remove();  // Видаляємо кнопку для перезапуску
+    }
 }
