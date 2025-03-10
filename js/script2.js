@@ -131,7 +131,7 @@ if (!existingButton) {
     restartButton.classList.add('restartButton', 'set_button'); // Додаємо клас для ідентифікації
     restartButton.textContent = 'Перезапустити гру';
     restartButton.onclick = restartGame;
-    document.body.appendChild(restartButton);
+    document.body.appendChild(restartButton); // ЗМІНИТИ КОНТЕЙНЕР ДЛЯ КНОПКИ
 }
 }
 

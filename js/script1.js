@@ -19,7 +19,7 @@ async function loadWords() {
 
         // Створюємо кнопки для кожного набору
         sets.forEach(set => {
-            const btn = document.createElement('div');
+            const btn = document.createElement('li');
             btn.className = 'set_button openModalBtn';
             btn.textContent = `Set ${set}`;
             btn.onclick = () => {

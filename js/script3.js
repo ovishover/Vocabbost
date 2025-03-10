@@ -6,11 +6,23 @@
 const trainList = document.getElementById("train_list");
 const backToSets = document.getElementById("backToSets");
 const answSection = document.getElementById("game_area");
+const backToTrainList = document.getElementById("backToTrainList");
 
 function toggleVisibility(elementsToHide, elementsToShow, backToTrainListVisibility = 'none') {
-    elementsToHide.forEach(el => el && (el.style.display = 'none'));
-    elementsToShow.forEach(el => el && (el.style.display = 'block'));
-    if (backToTrainList) backToTrainList.style.display = backToTrainListVisibility;
+    // Додаємо клас 'hidden' для елементів, які потрібно приховати
+    elementsToHide.forEach(el => el && el.classList.add('hidden'));
+
+    // Видаляємо клас 'hidden' для елементів, які потрібно показати
+    elementsToShow.forEach(el => el && el.classList.remove('hidden'));
+
+    // Замість стилю використовуємо клас для видимості
+    if (backToTrainList) {
+        if (backToTrainListVisibility === 'none') {
+            backToTrainList.classList.add('hidden');
+        } else {
+            backToTrainList.classList.remove('hidden');
+        }
+    }
 }
 
 document.querySelectorAll(".trainItems").forEach(button => {
