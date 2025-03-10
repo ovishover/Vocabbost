@@ -68,8 +68,6 @@ header {
 section {
     margin-left: auto;
     margin-right: auto;
-    /* margin: 0; */
-    /* justify-items: center; */
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -78,7 +76,8 @@ section {
     max-width: 500px;
     padding: 0 15px;
     margin: 0 auto;
-    justify-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 /*  UNDER HEADER SECTION */
@@ -116,7 +115,7 @@ section {
     display: block;
     max-width: 100%;
     height: auto;
-        align-items: center; */
+    align-items: center; 
 }
 
 
@@ -136,16 +135,9 @@ section {
     margin-bottom: 100px;
 }
 
-.cardContent{
-    display: block;
-    justify-items: center;
-    justify-content: center;
-    align-items: center;
-    align-content: ;
-}
-
 .cardBtn{
     display: flex;
+    justify-content: center;
 }
 #word {
     font-size: 40px;
@@ -162,14 +154,16 @@ section {
 .cardStyles{
     height: 400px;
     width: 300px;
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
     border-radius: 15px;
     background-color: #ffffff;
     display: block;
-    align-content: space-around;
-}   
+    justify-items: center;
+}
 
-
+div {
+    text-align: center;
+}
 
 /*  RESULT MENU SECTION */
 #result_menu{
