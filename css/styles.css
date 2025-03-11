@@ -60,7 +60,6 @@ header {
     color: var(--text-color);
     font-size: 16px;
     font-weight: 600;
-    font-family: sans-serif;
 }
 
 
@@ -119,6 +118,7 @@ section {
 .name_button {
     width: 130px;
     font-weight: 600;
+    font-size: 20px;
 }
 
 .cardWord {
@@ -137,6 +137,7 @@ section {
     font-size: 40px;
     font-weight: 600;
     margin-bottom: 20px;
+    letter-spacing: 0.05em;
 }
 
 #translation {
@@ -153,6 +154,7 @@ section {
     background-color: #ffffff;
     display: block;
     justify-items: center;
+    text-align: center;
 }
 
 .cardTitle{
@@ -161,19 +163,11 @@ section {
     font-size: 16px;
 }
 
-div {
-    text-align: center;
-}
 
 /*  RESULT MENU SECTION */
 #result_menu{
 
 }
-
-
-
-
-
 
 
   #sets {
@@ -205,7 +199,6 @@ div {
     color: var(--text-color2);
     font-size: 16px;
     font-weight: 600;
-    font-family: sans-serif;
     }
 
 .sound_button {
@@ -236,7 +229,6 @@ div {
     color: var(--text-color2);
     font-size: 16px;
     font-weight: 500;
-    font-family: sans-serif;
 }
 
 #backToTrainList {
