@@ -58,10 +58,9 @@ header {
     width: 250px;
     text-align: center;
     color: var(--text-color);
-    font-size: 16px;
+    font-size: 26px;
     font-weight: 600;
 }
-
 
 /*  SECTIONS */
 section {
@@ -127,6 +126,26 @@ section {
     margin-top: 80px;
     margin-bottom: 100px;
 }
+
+.cardIcon{
+    display: block;
+    justify-items: center;
+    margin-top: 20px;
+    /* margin-bottom: 40px; */
+    animation: scaleUpDown 2s ease-in-out infinite;
+}
+
+@keyframes scaleUpDown {
+    0% {
+      transform: scale(1); /* Початковий розмір */
+    }
+    50% {
+      transform: scale(1.03); /* Збільшення на 20% */
+    }
+    100% {
+      transform: scale(1); /* Повернення до початкового розміру */
+    }
+  }
 
 .cardBtn{
     display: flex;
@@ -215,6 +234,12 @@ section {
     height: 50px;
 }
     
+.memory_icon {
+    width: 250px;
+    height: 250px;
+    fill: rgb(13, 190, 0);
+}
+
 #backToSets, #backToTrainList {
     background-color: rgb(81, 86, 165);
     height: 50px;
@@ -320,6 +345,13 @@ margin: 15px;
     color: var(--text-color);
     font-size: 26px;
     font-weight: 600;
+}
+
+.resultMsg{
+    color: var(--text-color);
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
 .list_item {

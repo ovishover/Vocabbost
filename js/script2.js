@@ -114,18 +114,6 @@ function endGame() {
     console.log("Гра завершена! Ви пройшли всі слова."); // Вивести повідомлення
     document.getElementById('game_area').classList.add('hidden');
     document.getElementById('result_menu').classList.remove('hidden');
-    
-   // Перевіряємо, чи кнопка вже є на сторінці
-const existingButton = document.querySelector('.restartButton');
-
-// if (!existingButton) {
-//     // Якщо кнопка ще не існує, створюємо її
-//     const restartButton = document.createElement('div');
-//     restartButton.classList.add('restartButton', 'set_button'); // Додаємо клас для ідентифікації
-//     restartButton.textContent = 'Перезапустити гру';
-//     restartButton.onclick = restartGame;
-//     document.body.appendChild(restartButton); // ЗМІНИТИ КОНТЕЙНЕР ДЛЯ КНОПКИ
-// }
 }
 
 // Функція перезапуску гри
@@ -133,13 +121,9 @@ function restartGame() {
     loadTrainingWords();  // Завантажуємо нові слова
     console.log("Гра перезапущена!");
     currentIndex = 0;  // Скидаємо індекс на початок
+    document.getElementById('game_area').classList.remove('hidden');
+    document.getElementById('result_menu').classList.add('hidden');
     showWord(currentIndex);  // Відображаємо перше слово
-    
-    // Видаляємо кнопку після перезапуску
-    const restartButton = document.querySelector('.restartButton');
-    if (restartButton) {
-        restartButton.remove();  // Видаляємо кнопку для перезапуску
-    }
 }
 
 
