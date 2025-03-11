@@ -42,3 +42,4 @@ document.querySelectorAll(".backToMain").forEach(button => {
         window.location.href = 'index.html';
     });
 });
+

@@ -102,21 +102,6 @@ function showNextWord() {
     }
 }
 
-// Показати попереднє слово
-function showPreviousWord() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        console.log("showPreviousWord called, new index:", currentIndex); // Лог для нового індексу
-        showWord(currentIndex);
-    } else {
-        console.log("Немає попереднього слова.");
-    }
-}
-
-// const cardTitleElement = document.getElementById('cardTitle');
-// const cardTitle = cardTitleElement.textContent; // Отримуємо текст
-// cardTitleElement.textContent = `Set #${setNumber}`; // Присвоюємо новий текст
-
 
 // Функція завершення гри
 function endGame() {
@@ -148,3 +133,36 @@ function restartGame() {
         restartButton.remove();  // Видаляємо кнопку для перезапуску
     }
 }
+
+
+// Змінна для фіксації часу останнього натискання
+let lastClickTime = 0;
+
+// Мінімальний інтервал між натисканнями кнопки (в мілісекундах)
+const minInterval = 1000;
+
+// Функція для відтворення звуку з перевіркою інтервалу
+function playSoundForCurrentWord() {
+    const currentTime = Date.now();
+    
+    // Перевіряємо, чи пройшов мінімальний інтервал з останнього натискання
+    if (currentTime - lastClickTime < minInterval) {
+        console.log("Занадто швидке натискання! Зачекайте.");
+        return; // Якщо натискання було занадто швидким, звуковий файл не відтворюється
+    }
+
+    lastClickTime = currentTime; // Оновлюємо час останнього натискання
+    
+    const wordObj = shuffledWords[currentIndex]; // Отримуємо поточне слово
+    if (!wordObj || !wordObj.word) {
+        console.error("Немає звуку для цього слова.");
+        return;
+    }
+
+    const soundName = wordObj.word; // Ім'я звукового файлу
+    const audio = new Audio(`./sounds/${soundName}.mp3`); // Шлях до звуку (заміни 'sounds' на свій шлях)
+    audio.play();
+}
+
+// Додаємо слухача події на кнопку
+document.getElementById('playSoundBtn').addEventListener('click', playSoundForCurrentWord);

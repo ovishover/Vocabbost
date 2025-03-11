@@ -10,23 +10,25 @@
 /*  HEADER */
 
 header {
-    justify-items: center;
     background-color: #ffffff;
     position: fixed;
     top: 0;
-    height: 130px;
     left: 0;
     width: 100%;
     z-index: 10;
 }
 
 .header_container {
-    display: block;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 15px;
+    justify-items: center;
+    height: 130px;
+    
 }
 
 .label_header {
     padding: 10px;
-    margin: 10px 0px 0px 0px;
     display: flex; /* flexbox для вирівнювання елементів */
     align-items: center; /* Вирівнювання елементів по вертикалі */
     justify-content: center;
@@ -47,9 +49,7 @@ header {
 }
 
 .header_msg {
-    /* padding: 10px; */
     height: 50px;
-    /* margin: 10px 0px 10px 0px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,10 +66,11 @@ header {
 
 /*  SECTIONS */
 section {
-    margin-left: auto;
-    margin-right: auto;
     padding-top: 15px;
     padding-bottom: 15px;
+    position: relative;
+    top: 130px;
+    z-index: 0;
 }
 
 .container {
@@ -79,14 +80,6 @@ section {
     display: flex;
     justify-content: center;
 }
-
-/*  UNDER HEADER SECTION */
-#under_header {
-    height: 130px;
-    padding: 0px;
-    margin: 0px;
-}
-
 
 /*  TRAINING SECTION */
 #train_list{
@@ -138,6 +131,7 @@ section {
 .cardBtn{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 #word {
     font-size: 40px;
@@ -154,7 +148,7 @@ section {
 .cardStyles{
     height: 400px;
     width: 300px;
-    padding: 20px 20px 10px 20px;
+    padding: 20px 20px 30px 20px;
     border-radius: 15px;
     background-color: #ffffff;
     display: block;
@@ -208,6 +202,20 @@ div {
     font-family: sans-serif;
     }
 
+.sound_button {
+    background-color: var(--burron-color);
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    margin: 10px 30px 10px 20px;
+    border-radius: 100px;
+}
+
+.sound_icon{
+    width: 50px;
+    height: 50px;
+}
+    
 #backToSets, #backToTrainList {
     background-color: rgb(81, 86, 165);
     height: 50px;
