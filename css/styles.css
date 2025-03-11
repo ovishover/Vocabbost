@@ -155,6 +155,12 @@ section {
     justify-items: center;
 }
 
+.cardTitle{
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 16px;
+}
+
 div {
     text-align: center;
 }
