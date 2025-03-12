@@ -17,6 +17,13 @@ ul {
   justify-content: center;
 }
 
+
+
+.hidden {
+  display: none;
+}
+
+
 button {
   cursor: pointer;
 }
@@ -43,6 +50,3 @@ img {
 } 
 
 
-.hidden {
-  display: none;
-}

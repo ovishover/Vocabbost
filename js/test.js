@@ -1,115 +1,153 @@
+// ========================
+// 🚀 Глобальні змінні
+// ========================
+let currentGame = null;
+let currentIndex = 0;
+let shuffledWords = [];
 
-let words = [];
-let mistakes = [];
-let currentWords = [];
-let allAnswers = [];
-let score = 0;
-let audioCorrect = new Audio("sounds/correct.mp3");
-let audioWrong = new Audio("sounds/wrong.mp3");
+// ========================
+// 🔥 Запуск гри
+// ========================
+function startGame(gameId) {
+    currentGame = gameId; // Зберігаємо ID гри
 
-async function loadWords() {
-    let response = await fetch("words.csv");
-    let data = await response.text();
-    words = data.trim().split("\n").map(line => line.split(","));
-    createPortionMenu();
+    document.getElementById('train_list').classList.add('hidden');
+    document.getElementById('game_area').classList.remove('hidden');
+
+    loadTrainingWords(() => {
+        if (currentGame === 'memorize') {
+            startMemorizeGame();
+        } else if (currentGame === 'quiz') {
+            startQuizGame();
+        } else {
+            console.error(`Гра з ID '${gameId}' не знайдена.`);
+        }
+    });
 }
 
-function createPortionMenu() {
-    let portionMenu = document.getElementById("portionMenu");
-    portionMenu.innerHTML = "";
-    for (let i = 0; i < words.length; i += 10) {
-        let btn = document.createElement("button");
-        btn.textContent = `Набір ${i / 10 + 1}`;
-        btn.classList.add("btn_part");
-        btn.onclick = () => previewWords(words.slice(i, i + 10), i);
-        portionMenu.appendChild(btn);
+// ========================
+// 🧠 Гра 1: Запам'ятовування слів (Memorize)
+// ========================
+function startMemorizeGame() {
+    currentIndex = 0;
+    console.log("🔹 Запуск гри 'Memorize'");
+    showWord(currentIndex);
+}
+
+// Показати слово та переклад
+function showWord(index) {
+    const wordObj = shuffledWords[index];
+    if (!wordObj) {
+        console.error("❌ Немає слова для показу.");
+        return;
+    }
+    document.getElementById('word').textContent = wordObj.word;
+    document.getElementById('translation').textContent = wordObj.translate;
+}
+
+// Показати наступне слово
+function showNextWord() {
+    if (currentIndex < shuffledWords.length - 1) {
+        currentIndex++;
+        showWord(currentIndex);
+    } else {
+        console.log("✅ Всі слова переглянуті.");
+        endGame();
     }
 }
 
-function previewWords(portion, index) {
-    let preview = document.getElementById("wordPreview");
-    preview.innerHTML = portion.map(word => `${word[0]} - ${word[1]}`).join("<br>");
-    preview.classList.remove("hidden");
-    let startBtn = document.createElement("button");
-    startBtn.classList.add("button_start");
-    let buttonDiv = document.createElement("div");
-    buttonDiv.classList.add("button-container");
-    startBtn.textContent = "Розпочати";
-    buttonDiv.appendChild(startBtn);
-    preview.appendChild(buttonDiv);
-    startBtn.onclick = () => startPortion(words.slice(index, index + 10));
-    preview.appendChild(buttonDiv);
+// ========================
+// ❓ Гра 2: Вікторина (Quiz)
+// ========================
+function startQuizGame() {
+    console.log("🔹 Запуск гри 'Quiz'");
+    currentIndex = 0;
+    showQuizQuestion();
 }
 
+// Показати питання для вікторини
+function showQuizQuestion() {
+    const wordObj = shuffledWords[currentIndex];
+    if (!wordObj) return;
 
-function startPortion(portion) {
-    currentWords = portion.slice();
-    allAnswers = portion.slice();
-    score = 0;
-    mistakes = [];
-    document.querySelector(".menu").classList.add("hidden");
-    document.querySelector(".game").classList.remove("hidden");
-    showQuestion();
+    document.getElementById('quiz_question').textContent = `Як перекладається слово "${wordObj.word}"?`;
+    
+    // Створюємо варіанти відповідей (поки що просто випадкові слова)
+    const options = generateQuizOptions(wordObj.translate);
+    document.getElementById('quiz_options').innerHTML = options
+        .map(option => `<button onclick="checkQuizAnswer('${option}', '${wordObj.translate}')">${option}</button>`)
+        .join('');
 }
 
-function showQuestion() {
-    if (currentWords.length === 0) {
+// Перевірити відповідь у вікторині
+function checkQuizAnswer(userAnswer, correctAnswer) {
+    if (userAnswer === correctAnswer) {
+        alert("✅ Правильно!");
+        showNextQuizQuestion();
+    } else {
+        alert("❌ Неправильно!");
+    }
+}
+
+// Перейти до наступного питання
+function showNextQuizQuestion() {
+    if (currentIndex < shuffledWords.length - 1) {
+        currentIndex++;
+        showQuizQuestion();
+    } else {
+        console.log("✅ Вікторина завершена!");
         endGame();
+    }
+}
+
+// Генерація випадкових варіантів відповідей (спрощено)
+function generateQuizOptions(correctAnswer) {
+    let options = [correctAnswer];
+    while (options.length < 4) {
+        const randomWord = shuffledWords[Math.floor(Math.random() * shuffledWords.length)].translate;
+        if (!options.includes(randomWord)) options.push(randomWord);
+    }
+    return options.sort(() => Math.random() - 0.5);
+}
+
+// ========================
+// 🏁 Завершення гри
+// ========================
+function endGame() {
+    console.log("🎉 Гра завершена!");
+    document.getElementById('game_area').classList.add('hidden');
+    document.getElementById('result_menu').classList.remove('hidden');
+}
+
+// ========================
+// 🔄 Перезапуск гри
+// ========================
+function restartGame() {
+    if (!currentGame) {
+        console.error("❌ Гру для перезапуску не знайдено!");
         return;
     }
 
-    let randomIndex = Math.floor(Math.random() * currentWords.length);
-    let word = currentWords[randomIndex];
-    currentWords.splice(randomIndex, 1);
+    document.getElementById('game_area').classList.remove('hidden');
+    document.getElementById('result_menu').classList.add('hidden');
 
-    document.querySelector(".question").textContent = word[0];
-    document.querySelector(".question").classList.add("flash");
-    setTimeout(() => document.querySelector(".question").classList.remove("flash"), 600);
-
-    let options = [...allAnswers].sort(() => Math.random() - 0.5).slice(0, 3);
-    options.push(word);
-    options.sort(() => Math.random() - 0.5);
-
-    let answers = document.querySelector(".answers");
-    answers.innerHTML = "";
-    options.forEach(option => {
-        let btn = document.createElement("button");
-        btn.classList.add("button-answ");
-        btn.textContent = option[1];
-        btn.onclick = () => checkAnswer(word, option[1]);
-        answers.appendChild(btn);
-    });
-}
-
-function checkAnswer(correct, selected) {
-    if (correct[1] === selected) {
-        score++;
-        document.getElementById("score").textContent = score;
-        audioCorrect.play();
-    } else {
-        mistakes.push(correct);
-        audioWrong.play();
-    }
-    setTimeout(showQuestion, 400);
-}
-
-function exitGame() {
-    if (confirm("Ви дійсно хочете вийти?")) {
-        location.reload();
+    if (currentGame === 'memorize') {
+        startMemorizeGame();
+    } else if (currentGame === 'quiz') {
+        startQuizGame();
     }
 }
 
-function endGame() {
-    document.querySelector(".exitRound").classList.add("hidden");
-    document.querySelector(".question").classList.add("hidden");
-    document.querySelector(".answers").classList.add("hidden");
-    document.querySelector(".endMsg").classList.remove("hidden");
-    // document.querySelector(".answers").innerHTML = "";
-    let result = document.querySelector(".result");
-    mistakes.forEach(m => {
-        result.innerHTML += `<div class="result_words">${m[0]}</div> <div class="result_words">${m[1]}</div>`;
-    });
-    result.innerHTML += `<button onclick="location.reload()" class="comeback">Повернутися до меню</button>`;
+// ========================
+// 📥 Завантаження слів
+// ========================
+function loadTrainingWords(callback) {
+    fetch('words.json')
+        .then(response => response.json())
+        .then(data => {
+            shuffledWords = data.sort(() => Math.random() - 0.5);
+            console.log(`📦 Завантажено ${shuffledWords.length} слів`);
+            if (callback) callback();
+        })
+        .catch(error => console.error("❌ Помилка завантаження слів:", error));
 }
-
-window.onload = loadWords;

@@ -75,7 +75,7 @@ section {
     max-width: 500px;
     padding: 0 15px;
     margin: 0 auto;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
 }
 
@@ -85,7 +85,7 @@ section {
 }
 
 .trainList  {
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
 }
@@ -103,7 +103,7 @@ section {
     justify-items: center;
 }
 .demoImg{
-    display: block;
+    /* display: block; */
     max-width: 100%;
     height: auto;
     align-items: center; 
@@ -117,20 +117,20 @@ section {
 .name_button {
     width: 130px;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .cardWord {
-    display: block;
+    /* display: block; */
     justify-items: center;
     margin-top: 80px;
     margin-bottom: 100px;
 }
 
 .cardIcon{
-    display: block;
+    /* display: block; */
     justify-items: center;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     /* margin-bottom: 40px; */
     animation: scaleUpDown 2s ease-in-out infinite;
 }
@@ -165,16 +165,23 @@ section {
     color: var(--text-color);
 }
 
-.cardStyles{
+.flex {
+    /* display: flex; */
+    flex-wrap: wrap;
+}
+
+.trainCard, .resultStyles{
     height: 400px;
     width: 300px;
     padding: 20px 20px 30px 20px;
     border-radius: 15px;
     background-color: #ffffff;
-    display: block;
+    /* display: none; */
     justify-items: center;
+    margin: 15px auto;
     text-align: center;
 }
+
 
 .cardTitle{
     color: var(--text-color);
@@ -247,7 +254,7 @@ section {
     margin: 10px;
     padding: 10px;
     border-radius: 15px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     text-align: center; /* Це для тексту в середині елемента */
@@ -257,7 +264,7 @@ section {
 }
 
 #backToTrainList {
-    display: none;
+    /* display: none; */
 }
 
 
@@ -363,7 +370,7 @@ margin: 15px;
 }
 
 .list_item div {
-    display: block;
+    /* display: block; */
     width: 125px;
     font-size: 16px;
     font-weight: 500;

@@ -32,28 +32,28 @@
         <div class="container">
             <ul class="trainList">
 
-            <li onclick="startGame()" class="trainItems" >
+            <li onclick="startGame(1)" class="trainItems" >
                 <img src="./images/img6.jpg" alt="training" class="demoImg">
                 <div class="btnContain">
                     <div class="item_modes">Word memorizing</div>
                 </div>
             </li>
-            <li class="trainItems">
+            <li onclick="startGame(2)" class="trainItems">
                 <img src="./images/img7.jpg" alt="training" class="demoImg">
                 <div class="btnContain">
-                    <div class="item_modes ">Pick a Pair</div>
+                    <div class="item_modes ">Audio training</div>
                 </div>
             </li>
-            <li class="trainItems">
+            <li onclick="startGame(3)" class="trainItems">
                 <img src="./images/img3.jpg" alt="training" class="demoImg">
                 <div class="btnContain">
                     <div class="item_modes ">Anagram</div>
                 </div>
             </li>
-            <li class="trainItems">
+            <li onclick="startGame(4)" class="trainItems">
                 <img src="./images/img8.jpg" alt="training" class="demoImg">
                 <div class="btnContain">
-                    <div class="item_modes">Countdown to Boom</div>
+                    <div class="item_modes">Yes | No</div>
                 </div>
             </li>
             </ul>
@@ -62,9 +62,10 @@
        
          
     </section>
-    <section id="game_area" class="bellow_header hidden">
-        <div class="container ">
-            <div class="cardStyles">
+    <section id="game_area" class="bellow_header">
+        <div class="container flex">
+
+            <div id="1" class="trainCard" style="display: none;">
                 <div class="">
                     <p id="cardTitleGame" class="cardTitle">set #</p>
                 </div>
@@ -82,11 +83,65 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="result_menu" class="bellow_header hidden">
-        <div class="container ">
-            <div class="cardStyles">
+
+            <div id="2" class="trainCard" style="display: none;">
+                <div class="">
+                    <p id="cardTitleGame" class="cardTitle">set #</p>
+                </div>
+                <div class="cardWord">
+                    <div id="word"></div>
+                    <div id="translation"></div>
+                </div>
+                <div class="cardBtn">
+                    <div  id="playSoundBtn" class="sound_button">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000" viewBox="-2.4 -2.4 28.8 28.8" class="sound_icon"><g stroke="#ffffff" stroke-width="1.6"><path stroke-linecap="round" d="M22 17v-5c0-1.821-.487-3.53-1.338-5M2 18v-6C2 6.477 6.477 2 12 2c1.821 0 3.53.487 5 1.338"/><path d="M8 15.187c0-.578 0-.867-.069-1.097a1.529 1.529 0 0 0-1.095-1.059c-.225-.054-.5-.03-1.052.015-.956.079-1.435.118-1.825.27-.899.347-1.585 1.123-1.846 2.088C2 15.823 2 16.324 2 17.328v.186c0 1.03 0 1.544.123 1.979a3.102 3.102 0 0 0 1.588 1.944c.392.195.878.275 1.85.436.645.106.968.16 1.229.106a1.521 1.521 0 0 0 1.119-1C8 20.718 8 20.376 8 19.693v-4.506ZM16 15.187c0-.578 0-.867.069-1.097.16-.531.576-.934 1.095-1.059.225-.054.5-.03 1.051.015.957.079 1.436.118 1.826.27.899.347 1.585 1.123 1.846 2.088.113.419.113.92.113 1.924v.186c0 1.03 0 1.544-.123 1.979a3.103 3.103 0 0 1-1.588 1.944c-.392.195-.878.275-1.85.436-.645.106-.968.16-1.229.106a1.521 1.521 0 0 1-1.119-1C16 20.718 16 20.376 16 19.693v-4.506Z"/><path stroke-linecap="round" d="M12 6.5v5M15 8v2M9 8v2"/></g></svg>
+                    </div> 
+
+                    <div class="set_button">
+                        <p class="name_button">Got it</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="3" class="trainCard" style="display: none;">
+                <div class="">
+                    <p id="cardTitleGame" class="cardTitle">set #</p>
+                </div>
+                <div class="cardWord">
+                    <div id="word"></div>
+                    <div id="translation"></div>
+                </div>
+                <div class="cardBtn">
+                    <div  id="playSoundBtn" class="sound_button">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000" viewBox="-2.4 -2.4 28.8 28.8" class="sound_icon"><g stroke="#ffffff" stroke-width="1.6"><path stroke-linecap="round" d="M22 17v-5c0-1.821-.487-3.53-1.338-5M2 18v-6C2 6.477 6.477 2 12 2c1.821 0 3.53.487 5 1.338"/><path d="M8 15.187c0-.578 0-.867-.069-1.097a1.529 1.529 0 0 0-1.095-1.059c-.225-.054-.5-.03-1.052.015-.956.079-1.435.118-1.825.27-.899.347-1.585 1.123-1.846 2.088C2 15.823 2 16.324 2 17.328v.186c0 1.03 0 1.544.123 1.979a3.102 3.102 0 0 0 1.588 1.944c.392.195.878.275 1.85.436.645.106.968.16 1.229.106a1.521 1.521 0 0 0 1.119-1C8 20.718 8 20.376 8 19.693v-4.506ZM16 15.187c0-.578 0-.867.069-1.097.16-.531.576-.934 1.095-1.059.225-.054.5-.03 1.051.015.957.079 1.436.118 1.826.27.899.347 1.585 1.123 1.846 2.088.113.419.113.92.113 1.924v.186c0 1.03 0 1.544-.123 1.979a3.103 3.103 0 0 1-1.588 1.944c-.392.195-.878.275-1.85.436-.645.106-.968.16-1.229.106a1.521 1.521 0 0 1-1.119-1C16 20.718 16 20.376 16 19.693v-4.506Z"/><path stroke-linecap="round" d="M12 6.5v5M15 8v2M9 8v2"/></g></svg>
+                    </div> 
+
+                    <div class="set_button">
+                        <p class="name_button">Got it</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="4" class="trainCard" style="display: none;">
+                <div class="">
+                    <p id="cardTitleGame" class="cardTitle">set #</p>
+                </div>
+                <div class="cardWord">
+                    <div id="word"></div>
+                    <div id="translation"></div>
+                </div>
+                <div class="cardBtn">
+                    <div  id="playSoundBtn" class="sound_button">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000" viewBox="-2.4 -2.4 28.8 28.8" class="sound_icon"><g stroke="#ffffff" stroke-width="1.6"><path stroke-linecap="round" d="M22 17v-5c0-1.821-.487-3.53-1.338-5M2 18v-6C2 6.477 6.477 2 12 2c1.821 0 3.53.487 5 1.338"/><path d="M8 15.187c0-.578 0-.867-.069-1.097a1.529 1.529 0 0 0-1.095-1.059c-.225-.054-.5-.03-1.052.015-.956.079-1.435.118-1.825.27-.899.347-1.585 1.123-1.846 2.088C2 15.823 2 16.324 2 17.328v.186c0 1.03 0 1.544.123 1.979a3.102 3.102 0 0 0 1.588 1.944c.392.195.878.275 1.85.436.645.106.968.16 1.229.106a1.521 1.521 0 0 0 1.119-1C8 20.718 8 20.376 8 19.693v-4.506ZM16 15.187c0-.578 0-.867.069-1.097.16-.531.576-.934 1.095-1.059.225-.054.5-.03 1.051.015.957.079 1.436.118 1.826.27.899.347 1.585 1.123 1.846 2.088.113.419.113.92.113 1.924v.186c0 1.03 0 1.544-.123 1.979a3.103 3.103 0 0 1-1.588 1.944c-.392.195-.878.275-1.85.436-.645.106-.968.16-1.229.106a1.521 1.521 0 0 1-1.119-1C16 20.718 16 20.376 16 19.693v-4.506Z"/><path stroke-linecap="round" d="M12 6.5v5M15 8v2M9 8v2"/></g></svg>
+                    </div> 
+
+                    <div class="set_button">
+                        <p class="name_button">Got it</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="result_menu" class="resultStyles" style="display: none;">
                 <div class="">
                     <p id="cardTitleResult" class="cardTitle">set #</p>
                 </div>
@@ -100,14 +155,14 @@
                     <div onclick="restartGame()" class="set_button restartButton">
                         <p class="name_button">Again</p>
                     </div>
-                    <div onclick="" class="set_button">
+                    <div onclick="nextGame()" class="set_button">
                         <p class="name_button">Next exercise</p>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
     <script src="./js/script2.js"></script>
-    <script src="./js/script3.js"></script>
 </body>
 </html>
