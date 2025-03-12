@@ -157,8 +157,8 @@ section {
 .cardIcon{
     /* display: block; */
     justify-items: center;
-    /* margin-top: 20px; */
-    /* margin-bottom: 40px; */
+    margin-top: 30px;
+    margin-bottom: 20px;
     animation: scaleUpDown 2s ease-in-out infinite;
 }
 

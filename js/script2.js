@@ -3,7 +3,7 @@ let shuffledWords = []; // Перемішаний набір слів
 let selectedWords = []; // Масив вибраних слів
 let currentGame = null;
 let lastClickTime = 0; // Змінна для фіксації часу останнього натискання
-const minInterval = 400; // Мінімальний інтервал між натисканнями кнопки (в мілісекундах
+const minInterval = 300; // Мінімальний інтервал між натисканнями кнопки (в мілісекундах
 let header = document.querySelector('.header_title');
 
 // ====== СЛУЖБОВІ ФУНКЦІЇ ====== 
