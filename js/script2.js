@@ -4,7 +4,7 @@ let selectedWords = []; // Масив вибраних слів
 let currentGame = null;
 let lastClickTime = 0; // Змінна для фіксації часу останнього натискання
 const minInterval = 1000; // Мінімальний інтервал між натисканнями кнопки (в мілісекундах
-
+let header = document.querySelector('.header_title');
 
 // ====== СЛУЖБОВІ ФУНКЦІЇ ====== 
 
@@ -94,6 +94,8 @@ function restartGame() {
 function endGame() {
     console.log("Гра завершена! Ви пройшли всі слова."); // Вивести повідомлення
     // currentGame++
+
+    // header.innerHTML = 'Choose a training';
     currentIndex = 0;  // Скидаємо індекс на початок
     document.getElementById(currentGame).style.display = 'none';
     document.getElementById('result_menu').style.display = 'block';
@@ -181,6 +183,8 @@ async function loadTrainingWords() {
 //  ====== GAME 1 (memorize) ====== - перегляд карток для запам'ятовування
 // Показати слово та його переклад
 function startMemorizeGame(index) {
+    header.innerHTML = 'Memorize';
+
     const wordObj = shuffledWords[index]; // Отримуємо об'єкт слова
     if (!wordObj) {
         console.error("Немає слова для показу.");
@@ -210,6 +214,7 @@ function showNextWord() {
 
 //  ====== GAME 2 (audiotraining) ====== - ПЕРЕГЛЯД КАРТОК ЗІ СЛОВАМИ
 function testGame2() {
+    header.innerHTML = 'Audio Traning';
     console.log("test game:"); // Лог для перевірки індексу
 }
 
@@ -218,6 +223,7 @@ function testGame2() {
 
 //  ====== GAME 3 (anagram) ====== - зібрати слово по буквам
 function testGame3() {
+    header.innerHTML = 'Anagram';
     console.log("test game:"); // Лог для перевірки індексу
 }
 
@@ -226,6 +232,7 @@ function testGame3() {
 
 //  ====== GAME 4 (boom) ====== - гра у так/ні
 function testGame4() {
+    header.innerHTML = 'Yes | No';
     console.log("test game:"); // Лог для перевірки індексу
 }
 
