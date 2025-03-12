@@ -12,9 +12,9 @@ ul {
   margin: 0;
   list-style-type: none;
   padding: 0;
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
 }
 
 
@@ -30,7 +30,7 @@ button {
 
 
 body {
-  font-family:  Lato;
+  font-family:  Roboto;
   margin: 0px;
   background-color: #cfd9e9;
 }

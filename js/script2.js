@@ -3,7 +3,7 @@ let shuffledWords = []; // Перемішаний набір слів
 let selectedWords = []; // Масив вибраних слів
 let currentGame = null;
 let lastClickTime = 0; // Змінна для фіксації часу останнього натискання
-const minInterval = 1000; // Мінімальний інтервал між натисканнями кнопки (в мілісекундах
+const minInterval = 400; // Мінімальний інтервал між натисканнями кнопки (в мілісекундах
 let header = document.querySelector('.header_title');
 
 // ====== СЛУЖБОВІ ФУНКЦІЇ ====== 
@@ -18,30 +18,38 @@ function getUrlParameter(name) {
 function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-         [arr[i], arr[j]] = [arr[j], arr[i]]; // Міняємо місцями елементи
+        [arr[i], arr[j]] = [arr[j], arr[i]]; // Міняємо місцями елементи
     }
 }
-
- // Перемішуємо слова перед початком гри
 function shuffleWords() {
-    // Перевіряємо, чи є selectedWords
     if (selectedWords.length === 0) {
         console.error("Немає слів для перемішування.");
         return;
     }
-
     shuffledWords = [...selectedWords]; // Копіюємо масив слів
     shuffleArray(shuffledWords); // Перемішуємо його
-    return shuffledWords
-    // startMemorizeGame(currentIndex); // Показуємо перше слово
 }
 
 // Функція початку гри
-    function startGame(gameId) {
+const gameFunctions = {
+    1: startMemorizeGame,
+    2: testGame2,
+    3: testGame3,
+    4: testGame4
+};
+
+function startGame(gameId) {
     currentGame = gameId; // Зберігаємо ID гри
     shuffleWords();
-    document.getElementById('train_list').classList.add('hidden');
-    // document.getElementById('game_area').classList.remove('hidden');
+
+    var items = document.querySelectorAll('.heder_items');
+    items.forEach(function(item) {
+        item.style.display = 'flex';
+    });
+
+    document.querySelector('.header_list').style.display = 'flex';
+    document.getElementById('name_label').style.display = 'none';
+    document.getElementById('train_list').style.display = 'none';
 
     const gameElement = document.getElementById(String(currentGame));
     if (gameElement) {
@@ -53,53 +61,36 @@ function shuffleWords() {
 
     currentIndex = 0; // Починаємо з першого слова
 
-    if (currentGame === 1) {
-        startMemorizeGame(currentIndex);
-    } else if (currentGame === 2) {
-        testGame2(currentIndex); // АБО testGame2(shuffledWords), якщо потрібно передавати масив
-    } else if (currentGame === 3) {
-        testGame3(currentIndex);
-    } else if (currentGame === 4) {
-        testGame4(currentIndex);
+    if (gameFunctions[currentGame]) {
+        gameFunctions[currentGame](currentIndex); // Викликаємо відповідну функцію для гри
     } else {
-        console.error(`Гра з ID '${gameId}' не знайдена.`);
+        console.error(`Гра з ID '${currentGame}' не знайдена.`);
     }
 }
 
-function nextGame () {
+
+function nextGame() {
     currentIndex = 0;
-    if (currentGame > 3) {
-        currentGame = 1
-        // console.log("вийдіть з гри")
-    }else {
-        currentGame++
-        console.log(currentGame)
-    }
+    currentGame = (currentGame % 4) + 1; // Збільшуємо currentGame, та якщо він більший за 4, скидаємо на 1
     startGame(currentGame);
     document.getElementById('result_menu').style.display = 'none';
 }
 
-
 // Функція перезапуску гри
 function restartGame() {
-    
     currentIndex = 0;
-    startGame(currentGame)
+    startGame(currentGame);
     console.log("Гра перезапущена!");
     document.getElementById('result_menu').style.display = 'none';
 }
 
-
-// Функція завершення гри
 function endGame() {
-    console.log("Гра завершена! Ви пройшли всі слова."); // Вивести повідомлення
-    // currentGame++
-
-    // header.innerHTML = 'Choose a training';
-    currentIndex = 0;  // Скидаємо індекс на початок
+    console.log("Гра завершена! Ви пройшли всі слова.");
+    currentIndex = 0; // Скидаємо індекс на початок
     document.getElementById(currentGame).style.display = 'none';
     document.getElementById('result_menu').style.display = 'block';
 }
+
 
 
 // Функція для відтворення звуку з перевіркою інтервалу
@@ -199,6 +190,16 @@ function startMemorizeGame(index) {
 
 // Показати наступне слово
 function showNextWord() {
+
+    const currentTime = Date.now();
+        // Перевіряємо, чи пройшов мінімальний інтервал з останнього натискання
+    if (currentTime - lastClickTime < minInterval) {
+        console.log("Занадто швидке натискання! Зачекайте.");
+        return; // Якщо натискання було занадто швидким, звуковий файл не відтворюється
+    }
+    lastClickTime = currentTime; // Оновлюємо час останнього натискання
+
+
     if (currentIndex < shuffledWords.length - 1) {
         currentIndex++;
         console.log("showNextWord called, new index:", currentIndex); // Лог для нового індексу
