@@ -308,6 +308,22 @@ section {
     font-weight: 500;
     }
 
+.choose_button {
+
+    height: 50px;
+    width: 140px;
+    margin: 10px 0;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Це для тексту в середині елемента */
+    background-color: var(--burron-color);
+    color: var(--text-color2);
+    font-size: 16px;
+    font-weight: 500;
+    }
+
 .goButton {
     height: 50px;
     width: 120px;

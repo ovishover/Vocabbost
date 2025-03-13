@@ -139,7 +139,7 @@ function ChooseTranslate() {
         choices.forEach(choice => {
             let answerButton = document.createElement("li");
             answerButton.textContent = choice;
-            answerButton.classList.add("set_button");
+            answerButton.classList.add("choose_button");
             answerButton.addEventListener("click", () => {
                 results.push({ word: wordObj.word, correct: choice === wordObj.translate });
                 correctAnswers += choice === wordObj.translate ? 1 : 0;
