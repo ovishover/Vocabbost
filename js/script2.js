@@ -60,11 +60,13 @@ function nextGame() {
 }
 
 function restartGame() {
-    currentIndex = 0;
-    startGame(currentGame);
+    currentIndex = 0; // Скидаємо лічильник індексу
+    updateProgressBar(); // Скидаємо шкалу на 0%
+    startGame(currentGame); // Перезапускаємо гру
     console.log("Гра перезапущена!");
     document.getElementById('result_menu').style.display = 'none';
 }
+
 
 function endGame() {
     console.log("Гра завершена!");
@@ -131,7 +133,8 @@ function showNextWord() {
 function ChooseTranslate() {
     shuffleWords();
     header.innerHTML = 'Translation';
-    currentIndex = 0; // Використовуємо глобальний індекс
+    currentIndex = 0; // Скидаємо лічильник перед стартом гри
+    updateProgressBar(); // Оновлюємо шкалу на початку, щоб вона була 0%
 
     function getRandomChoices(correctAnswer, allWords) {
         let choices = [correctAnswer];
@@ -155,9 +158,9 @@ function ChooseTranslate() {
             answerButton.addEventListener("click", () => {
                 results.push({ word: wordObj.word, correct: choice === wordObj.translate });
                 correctAnswers += choice === wordObj.translate ? 1 : 0;
-                
-                currentIndex++; // Глобальне оновлення індексу
-                updateProgressBar(); // Тепер оновлюємо шкалу після зміни currentIndex
+
+                updateProgressBar(); // Оновлюємо шкалу перед зміною індексу
+                currentIndex++; // Тепер збільшуємо лічильник
 
                 nextQuestion();
             });
@@ -167,6 +170,7 @@ function ChooseTranslate() {
 
     function nextQuestion() {
         if (currentIndex < shuffledWords.length) {
+            updateProgressBar();
             askQuestion(shuffledWords[currentIndex]);
         } else {
             document.getElementById("result-container").textContent = `Game over! Correct: ${correctAnswers}/${results.length}`;
@@ -175,6 +179,7 @@ function ChooseTranslate() {
 
     nextQuestion();
 }
+
 
 
 function testGame3() { header.innerHTML = 'Anagram'; }
