@@ -15,6 +15,13 @@ const gameFunctions = {
     4: testGame4
 };
 
+function updateProgressBar() {
+    if (!shuffledWords.length) return;
+    let progress = ((currentIndex + 1) / shuffledWords.length) * 100; // Від 1 до 100%
+    document.querySelector('.header_progress').style.setProperty('--progress', `${progress}%`);
+}
+
+
 function getUrlParameter(name) {
     return new URLSearchParams(window.location.search).get(name);
 }
@@ -104,6 +111,8 @@ function startMemorizeGame(index) {
     if (!wordObj) return console.error("Немає слова для показу.");
     document.getElementById('word').textContent = wordObj.word;
     document.getElementById('translation').textContent = wordObj.translate;
+    
+    updateProgressBar(); // Оновлюємо лінію прогресу
 }
 
 function showNextWord() {
@@ -112,15 +121,18 @@ function showNextWord() {
     
     if (currentIndex < shuffledWords.length - 1) {
         startMemorizeGame(++currentIndex);
+        updateProgressBar(); // Оновлюємо лінію прогресу
     } else {
         endGame();
     }
 }
 
+
 function ChooseTranslate() {
     shuffleWords();
     header.innerHTML = 'Translation';
-    let localIndex = 0;
+    currentIndex = 0; // Використовуємо глобальний індекс
+
     function getRandomChoices(correctAnswer, allWords) {
         let choices = [correctAnswer];
         while (choices.length < 4) {
@@ -129,13 +141,13 @@ function ChooseTranslate() {
         }
         return choices.sort(() => Math.random() - 0.5);
     }
-    
+
     function askQuestion(wordObj) {
         let choices = getRandomChoices(wordObj.translate, shuffledWords);
         document.getElementById("word2").textContent = wordObj.word;
         let answersContainer = document.getElementById("answers_container");
         answersContainer.innerHTML = "";
-        
+
         choices.forEach(choice => {
             let answerButton = document.createElement("li");
             answerButton.textContent = choice;
@@ -143,21 +155,27 @@ function ChooseTranslate() {
             answerButton.addEventListener("click", () => {
                 results.push({ word: wordObj.word, correct: choice === wordObj.translate });
                 correctAnswers += choice === wordObj.translate ? 1 : 0;
+                
+                currentIndex++; // Глобальне оновлення індексу
+                updateProgressBar(); // Тепер оновлюємо шкалу після зміни currentIndex
+
                 nextQuestion();
             });
             answersContainer.appendChild(answerButton);
         });
     }
-    
+
     function nextQuestion() {
-        if (localIndex < shuffledWords.length) {
-            askQuestion(shuffledWords[localIndex++]);
+        if (currentIndex < shuffledWords.length) {
+            askQuestion(shuffledWords[currentIndex]);
         } else {
             document.getElementById("result-container").textContent = `Game over! Correct: ${correctAnswers}/${results.length}`;
         }
     }
+
     nextQuestion();
 }
+
 
 function testGame3() { header.innerHTML = 'Anagram'; }
 function testGame4() { header.innerHTML = 'Yes | No'; }

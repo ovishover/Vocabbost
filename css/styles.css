@@ -3,8 +3,8 @@
     --accent-color: #7297ea;
     --text-color: #aaaaaa;
     --text-color2: #ffffff;
-    --burron-color: #7297ea;
     --margin-calc: 40px;
+    --progress: 0%;
   }
 
 
@@ -26,6 +26,23 @@ header {
     justify-items: center;
     height: 130px;
     
+}
+
+.header_progress{
+    position: fixed;
+    border-bottom: 2px solid transparent;
+}
+
+.header_progress::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+    width: var(--progress);
+    transition: width 0.5s linear;
+    z-index: 11;
 }
 
 .header_list{
@@ -69,6 +86,24 @@ header {
     margin-right: 10px;
     height: 60px;
     border: none;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    border-bottom: 3px solid transparent;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background-color: #4CAF50;
+    width: var(1, 0%);
+    transition: width 0.3s ease-in-out;
 }
 
 .name_label svg {
@@ -219,7 +254,7 @@ section {
         padding-top: 80px;
     padding-bottom: 20px;
     letter-spacing: 0.05em;
-    color: #313131;
+    color: #5a5a5a;
 
 }
 
@@ -302,7 +337,7 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center; /* Це для тексту в середині елемента */
-    background-color: var(--burron-color);
+    background-color: var(--accent-color);
     color: var(--text-color2);
     font-size: 16px;
     font-weight: 500;
@@ -318,7 +353,7 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center; /* Це для тексту в середині елемента */
-    background-color: var(--burron-color);
+    background-color: var(--accent-color);
     color: var(--text-color2);
     font-size: 16px;
     font-weight: 500;
@@ -333,14 +368,14 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center; /* Це для тексту в середині елемента */
-    background-color: var(--burron-color);
+    background-color: var(--accent-color);
     color: var(--text-color2);
     font-size: 16px;
     font-weight: 500;
 }
 
 .sound_button {
-    background-color: var(--burron-color);
+    background-color: var(--accent-color);
     height: 50px;
     width: 50px;
     padding: 10px;
@@ -438,13 +473,13 @@ margin: 15px;
 /* Стиль для кнопки закриття модалки*/
 .close_btn {
     left: 30px;
-    background-color: rgb(202, 93, 74);
+    background-color: var(--text-color);
     color: #ffffff;
 }
 
 .start_btn {
     right: 30px;
-    background-color: var(--burron-color);
+    background-color: var(--accent-color);
     color: #ffffff;
 }
 
