@@ -18,7 +18,7 @@
   {"word": "table", "translate": "стіл", "set": 2},
   {"word": "chair", "translate": "крісло", "set": 2},
   {"word": "shirt", "translate": "сорочка", "set": 2},
-  {"word": "shoes", "translate": "взуття", "set": 2},
+  {"word": "shoe", "translate": "черевик", "set": 2},
   {"word": "hat", "translate": "капелюх", "set": 2},
   
   {"word": "coffee", "translate": "кава", "set": 3},
@@ -71,7 +71,7 @@
   {"word": "instrument", "translate": "інструмент", "set": 7},
   {"word": "guitar", "translate": "гітара", "set": 7},
   {"word": "piano", "translate": "фортепіано", "set": 7},
-  {"word": "drums", "translate": "барабани", "set": 7},
+  {"word": "drum", "translate": "барабан", "set": 7},
   {"word": "violin", "translate": "скрипка", "set": 7},
   {"word": "songwriter", "translate": "автор пісень", "set": 7},
   {"word": "orchestra", "translate": "оркестр", "set": 7},
