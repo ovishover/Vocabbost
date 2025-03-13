@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" enable-background="new 0 0 500 500" version="1.1" xml:space="preserve">
+ <g class="layer">
+  <title>Layer 1</title>
+  <g display="none" id="Background_Simple">
+   <g display="inline" id="svg_75">
+    <path d="m739.08,45.61c-82.41,9.42 -123.55,99.45 -113.82,156.47c13.29,77.93 134.32,100.61 216.94,89.18c87.07,-12.05 124.9,-77.6 101.16,-144.91c-19.33,-54.82 -133.64,-108.81 -204.28,-100.74z" fill="#407BFF" id="svg_76"/>
+    <path d="m739.08,45.61c-82.41,9.42 -123.55,99.45 -113.82,156.47c13.29,77.93 134.32,100.61 216.94,89.18c87.07,-12.05 124.9,-77.6 101.16,-144.91c-19.33,-54.82 -133.64,-108.81 -204.28,-100.74z" fill="#FFFFFF" id="svg_77" opacity="0.9"/>
+   </g>
+  </g>
+  <g id="Graphics">
+   <g id="svg_78">
+    <g id="svg_183" transform="rotate(26.0789 405.107 147.505)">
+     <ellipse cx="208.12" cy="470.18" fill="#407BFF" id="svg_184" rx="46.93" ry="46.93" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -92.3448 277.623)"/>
+     <ellipse cx="208.12" cy="470.18" fill="#FAFAFA" id="svg_185" opacity="0.7" rx="46.93" ry="46.93" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -92.3448 277.623)"/>
+    </g>
+    <g id="svg_4">
+     <g id="svg_79">
+      <g id="svg_80">
+       <ellipse cx="201.42" cy="349.74" fill="#407BFF" id="svg_81" rx="46.93" ry="46.93" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -92.3448 277.623)"/>
+       <ellipse cx="201.42" cy="349.74" fill="#FAFAFA" id="svg_82" opacity="0.7" rx="46.93" ry="46.93" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -92.3448 277.623)"/>
+      </g>
+     </g>
+     <text fill="#ffffff" font-family="Helvetica" font-size="38" font-weight="bold" id="svg_194" stroke-width="0" text-anchor="middle" transform="matrix(1.43666 0 0 1.37408 -26.3558 -146.257)" x="217.57" xml:space="preserve" y="216.46">A</text>
+    </g>
+    <g id="svg_1">
+     <g id="svg_3">
+      <g id="svg_186">
+       <g id="svg_187">
+        <ellipse cx="110.92" cy="186.02" fill="#7298ea" id="svg_188" rx="46.93" ry="46.93" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -92.3448 277.623)"/>
+        <ellipse cx="110.92" cy="186.02" fill="#7298ea" id="svg_189" opacity="0.7" rx="46.93" ry="46.93" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -92.3448 277.623)">fes</ellipse>
+       </g>
+      </g>
+      <text fill="#ffffff" font-family="Helvetica" font-size="38" font-weight="bold" id="svg_198" stroke-width="0" text-anchor="middle" transform="matrix(1.43666 0 0 1.37408 -26.3558 -146.257)" x="93.44" xml:space="preserve" y="264.6">G</text>
+     </g>
+    </g>
+    <g id="svg_108">
+     <path d="m1447.85,84.13l-0.77,-0.63c2.28,-2.81 4.28,-5.86 5.95,-9.06l0.89,0.47c-1.71,3.25 -3.75,6.35 -6.07,9.22z" fill="#407BFF" id="svg_109"/>
+     <path d="m1425.25,100.79l-0.37,-0.93c6.29,-2.51 12.01,-6.14 17,-10.79l0.68,0.73c-5.08,4.74 -10.9,8.43 -17.31,10.99z" fill="#407BFF" id="svg_110"/>
+    </g>
+    <g id="svg_161">
+     <path d="m381.61,201.27c-2.76,0 -5,-2.24 -5,-5c0,-2.76 2.24,-5 5,-5c23.12,0 41.93,-18.81 41.93,-41.93c0,-23.12 -18.81,-41.92 -41.93,-41.92s-41.92,18.8 -41.92,41.92c0,28.63 -23.3,51.93 -51.94,51.93c-28.63,0 -51.92,-23.29 -51.92,-51.93c0,0 0,0 0,0c0,-23.12 -18.81,-41.92 -41.93,-41.92c-23.12,0 -41.93,18.8 -41.93,41.92c0,28.63 -23.29,51.93 -51.93,51.93c-28.63,0 -51.93,-23.3 -51.93,-51.93s23.3,-51.93 51.93,-51.93c2.76,0 5,2.24 5,5c0,2.76 -2.24,5 -5,5c-23.12,0 -41.93,18.81 -41.93,41.93s18.81,41.93 41.93,41.93c23.12,0 41.93,-18.81 41.93,-41.93c0,-28.63 23.3,-51.92 51.93,-51.92c28.63,0 51.92,23.29 51.93,51.92c0,0 0,0 0,0c0,23.12 18.81,41.93 41.92,41.93c23.13,0 41.94,-18.81 41.94,-41.93c0,-28.63 23.29,-51.92 51.92,-51.92s51.93,23.29 51.93,51.92c0,28.64 -23.29,51.93 -51.93,51.93z" fill="#407BFF" id="svg_107" transform="rotate(-20.4444 240.822 149.338)"/>
+    </g>
+    <g id="svg_2" transform="rotate(18.2831 198.146 247.757)">
+     <g id="svg_174">
+      <g id="svg_175">
+       <ellipse cx="76.01" cy="281.95" fill="#407BFF" id="svg_176" rx="46.93" ry="46.93" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -92.3448 277.623)"/>
+       <ellipse cx="76.01" cy="281.95" fill="#FAFAFA" id="svg_177" opacity="0.7" rx="46.93" ry="46.93" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -92.3448 277.623)"/>
+      </g>
+     </g>
+     <text fill="#ffffff" font-family="Helvetica" font-size="38" font-weight="bold" id="svg_199" stroke-width="0" text-anchor="middle" transform="matrix(1.43666 0 0 1.37408 -25.3558 -145.257)" x="157.59" xml:space="preserve" y="298.68">R</text>
+    </g>
+    <text fill="#ffffff" font-family="Helvetica" font-size="38" font-weight="bold" id="svg_197" stroke-width="0" text-anchor="middle" transform="rotate(26.0789 403.61 146.581) matrix(1.43666 0 0 1.37408 -26.3558 -146.257)" x="299.29" xml:space="preserve" y="226.23">M</text>
+    <g id="svg_29">
+     <g id="svg_14">
+      <g id="svg_26">
+       <g id="svg_162" transform="matrix(1.07773 0.487989 -0.49265 1.06753 158.779 -187.285)">
+        <g id="svg_163">
+         <ellipse cx="54.26" cy="407.55" fill="#7298ea" id="svg_164" rx="46.93" ry="46.93" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -92.3448 277.623)"/>
+         <ellipse cx="54.26" cy="407.55" fill="#7298ea" id="svg_165" opacity="0.7" rx="46.93" ry="46.93" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -92.3448 277.623)">fes</ellipse>
+        </g>
+       </g>
+       <text fill="#ffffff" font-family="Helvetica" font-size="38" font-weight="bold" id="svg_200" stroke-width="0" text-anchor="middle" transform="matrix(1.54833 0.701075 -0.676941 1.46688 185.585 -362.031)" x="250.83" xml:space="preserve" y="328.74">N</text>
+      </g>
+     </g>
+     <g id="svg_15" transform="matrix(0.940315 -0.340305 0.340305 0.940315 -112.969 68.5914)">
+      <g id="svg_27">
+       <g id="svg_16">
+        <g id="svg_17">
+         <ellipse cx="-21.83" cy="262.06" fill="#407BFF" id="svg_18" rx="46.93" ry="46.93" transform="matrix(0.134017 -0.79277 0.82577 0.128662 -57.7306 302.434)"/>
+         <ellipse cx="-21.83" cy="262.06" fill="#FAFAFA" id="svg_19" opacity="0.7" rx="46.93" ry="46.93" transform="matrix(0.134017 -0.79277 0.82577 0.128662 -57.7306 302.434)"/>
+        </g>
+       </g>
+       <text fill="#ffffff" font-family="Helvetica" font-size="38" font-weight="bold" id="svg_20" stroke-width="0" text-anchor="middle" transform="matrix(1.20185 0 0 1.10357 -2.52671 -37.9971)" x="132.44" xml:space="preserve" y="366.62">A</text>
+      </g>
+     </g>
+     <g id="svg_21" transform="matrix(0.749252 0.299041 -0.299041 0.749252 166.312 49.2943)">
+      <g id="svg_190">
+       <g id="svg_191">
+        <ellipse cx="14.41" cy="331.83" fill="#7298ea" id="svg_192" rx="46.93" ry="46.93" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -92.3448 277.623)"/>
+        <ellipse cx="14.41" cy="331.83" fill="#7298ea" id="svg_193" opacity="0.7" rx="46.93" ry="46.93" transform="matrix(0.1602 -0.9871 0.9871 0.1602 -92.3448 277.623)">fes</ellipse>
+       </g>
+      </g>
+      <text fill="#ffffff" font-family="Helvetica" font-size="38" font-weight="bold" id="svg_196" stroke-width="0" text-anchor="middle" transform="matrix(1.43666 0 0 1.37408 -26.3558 -146.257)" x="184.15" xml:space="preserve" y="348.62">A</text>
+     </g>
+    </g>
+   </g>
+  </g>
+  <g id="svg_28">
+   <g id="svg_22">
+    <ellipse cx="249.61" cy="414.08" fill="#e0e0e0" id="svg_23" rx="31.69" ry="4.38"/>
+   </g>
+   <g id="Shadow_1_">
+    <ellipse cx="155.36" cy="406.7" fill="#dddddd" id="_x3C_Path_x3E__8_" rx="33.62" ry="5.41"/>
+   </g>
+   <g id="svg_24">
+    <ellipse cx="362.27" cy="430.52" fill="#e0e0e0" id="svg_25" rx="58.99" ry="5.38"/>
+   </g>
+  </g>
+ </g>
+</svg>
