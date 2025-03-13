@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" enable-background="new 0 0 500 500" version="1.1" xml:space="preserve">
+ <g class="layer">
+  <title>Layer 1</title>
+  <g display="none" id="Background_Simple" transform="matrix(1 0 0 1 0 0)">
+   <g id="svg_24">
+    <path d="m-208.15,115.74c40.56,102.15 -47.11,102.81 -72.68,143.22c-25.62,40.49 -98.49,61.87 -132.13,-26.23c-28.08,-73.55 49.26,-55.19 92.45,-82.29c35.41,-22.22 71.81,-136.84 112.36,-34.7z" display="inline" fill="#407BFF" id="svg_25"/>
+    <path d="m-208.15,115.74c40.56,102.15 -47.11,102.81 -72.68,143.22c-25.62,40.49 -98.49,61.87 -132.13,-26.23c-28.08,-73.55 49.26,-55.19 92.45,-82.29c35.41,-22.22 71.81,-136.84 112.36,-34.7z" display="inline" fill="#FFFFFF" id="svg_26" opacity="0.9"/>
+   </g>
+   <g display="inline" id="svg_27">
+    <ellipse cx="-308.27" cy="184.04" fill="#407BFF" id="svg_28" rx="155.12" ry="154.63"/>
+    <ellipse cx="-308.27" cy="184.04" fill="#FFFFFF" id="svg_29" opacity="0.9" rx="155.12" ry="154.63"/>
+   </g>
+  </g>
+  <g id="Shadow_1_">
+   <ellipse cx="254.5" cy="453.24" fill="#F5F5F5" id="_x3C_Path_x3E__47_" rx="209.39" ry="16.32"/>
+  </g>
+ </g>
+</svg>

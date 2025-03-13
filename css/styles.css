@@ -90,7 +90,7 @@ header {
 
 /*  SECTIONS */
 section {
-    padding-top: 15px;
+    /* padding-top: 15px; */
     padding-bottom: 15px;
     position: relative;
     top: 130px;
@@ -99,10 +99,14 @@ section {
 
 .container {
     max-width: 500px;
-    padding: 0 15px;
+    /* padding: 0 15px; */
     margin: 0 auto;
     /* display: flex; */
     justify-content: center;
+}
+
+.sets_container {
+    width: 300px;
 }
 
 /*  TRAINING SECTION */
@@ -120,20 +124,21 @@ section {
 .trainItems {
     border-radius: 0px 0px 15px 15px;
     background-color: #ffffff;
-    flex-basis: calc(100% / 2 - var(--margin-calc));
+    flex-basis: calc(100% / 2 - 20px);
     margin: 10px;
 }
 
 .btnContain {
     height: 85px;
-    align-content: center;
-    justify-items: center;
+    display: flex;
+    justify-content: center;
 }
 .demoImg{
     /* display: block; */
     max-width: 100%;
     height: auto;
     align-items: center; 
+    background-color: #e9dfcd;
 }
 
 
@@ -150,14 +155,14 @@ section {
 .cardWord {
     /* display: block; */
     justify-items: center;
-    margin-top: 80px;
-    margin-bottom: 100px;
+    /* margin-top: 80px; */
+    /* margin-bottom: 100px; */
 }
 
 .cardIcon{
     /* display: block; */
     justify-items: center;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 20px;
     animation: scaleUpDown 2s ease-in-out infinite;
 }
@@ -180,11 +185,24 @@ section {
     justify-content: center;
     align-items: center;
 }
-#word {
-    font-size: 40px;
+#word, #word2 {
+    /* font-size: 40px;
     font-weight: 600;
     margin-bottom: 20px;
+    letter-spacing: 0.05em; */
+}
+
+.target_word{
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 80px;
+    /* margin-bottom: 20px; */
     letter-spacing: 0.05em;
+
+}
+
+.trans_word{
+    margin-bottom: 100px;
 }
 
 #translation {
@@ -231,6 +249,17 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 15px;
+  }
+
+#answers_container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 90px;
   }
 
 
@@ -243,10 +272,10 @@ section {
 
 /*  BUTTONS */
 .set_button, .item_modes{
-    height: 40px;
-    width: 120px;
-    margin: 10px 15px 10px 15px;
-    padding: 10px;
+    height: 50px;
+    width: 100px;
+    margin: 10px;
+    padding: 5px;
     border-radius: 15px;
     display: flex;
     align-items: center;
