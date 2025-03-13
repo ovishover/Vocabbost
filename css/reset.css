@@ -35,6 +35,10 @@ body {
   background-color: #cfd9e9;
 }
 
+.block_scroll {
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
 }
