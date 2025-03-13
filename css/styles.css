@@ -1,8 +1,9 @@
 :root {
-    --accent-color: #D7C6A8;
+    /* --accent-color: #D7C6A8; */
+    --accent-color: #7297ea;
     --text-color: #aaaaaa;
     --text-color2: #ffffff;
-    --burron-color: #3b93ff83;
+    --burron-color: #7297ea;
     --margin-calc: 40px;
   }
 
@@ -117,7 +118,7 @@ section {
 .trainList  {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -125,14 +126,35 @@ section {
     border-radius: 15px;
     background-color: #ffffff;
     flex-basis: calc(100% / 2 - 20px);
-    margin: 10px;
+    margin-top: 10px;
 }
 
-.btnContain {
-    height: 85px;
+.cardNameContainer {
+    height: 50px;
     display: flex;
     justify-content: center;
 }
+
+.cardName {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 18px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    justify-content: center;
+}
+
+.btnContain{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
 .demoImg{
     /* display: block; */
     max-width: 100%;
@@ -192,22 +214,24 @@ section {
 }
 
 .target_word{
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 600;
-    margin-top: 80px;
-    /* margin-bottom: 20px; */
+        padding-top: 80px;
+    padding-bottom: 20px;
     letter-spacing: 0.05em;
+    color: #313131;
 
 }
 
 .trans_word{
-    margin-bottom: 100px;
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding-bottom: 130px;
 }
 
 #translation {
-    font-size: 40px;
-    font-weight: 500;
-    color: var(--text-color);
+
 }
 
 .flex {
@@ -244,21 +268,20 @@ section {
   #sets {
     background-color: #ffffff;
     border-radius: 10px;
-    padding: 10px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-top: 15px;
+    padding: 10px;
   }
 
 #answers_container {
     background-color: #ffffff;
     border-radius: 10px;
-    padding: 10px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 90px;
+    justify-content: space-evenly;
+    margin-top: 110px;
   }
 
 
@@ -270,10 +293,24 @@ section {
 }
 
 /*  BUTTONS */
-.set_button, .item_modes{
+.set_button{
     height: 50px;
-    width: 100px;
-    margin: 10px;
+    width: 110px;
+    margin: 10px 0;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Це для тексту в середині елемента */
+    background-color: var(--burron-color);
+    color: var(--text-color2);
+    font-size: 16px;
+    font-weight: 500;
+    }
+
+.goButton {
+    height: 50px;
+    width: 120px;
     padding: 5px;
     border-radius: 15px;
     display: flex;
@@ -283,21 +320,22 @@ section {
     background-color: var(--burron-color);
     color: var(--text-color2);
     font-size: 16px;
-    font-weight: 600;
-    }
+    font-weight: 500;
+}
 
 .sound_button {
     background-color: var(--burron-color);
     height: 50px;
     width: 50px;
     padding: 10px;
-    margin: 10px 30px 10px 20px;
+    margin: 10px 60px 10px 20px;
     border-radius: 100px;
 }
 
 .sound_icon{
     width: 50px;
     height: 50px;
+    margin-right: 30px;
 }
     
 .memory_icon {
