@@ -29,6 +29,22 @@ header {
     
 }
 
+.openModalBtn{
+    display: block;
+    justify-content: center;
+}
+
+.category_info{
+display: block;
+font-size: 12px;
+padding-top: 5px;
+}
+
+.set_info{
+    font-weight: 600;
+    display: block;
+}
+
 .header_progress{
     position: fixed;
     border-bottom: 2px solid transparent;
@@ -375,16 +391,17 @@ section {
 /*  BUTTONS */
 .set_button{
     height: 60px;
-    width: 110px;
+    width: 125px;
     margin: 10px 0;
     border-radius: 15px;
-    display: flex;
+    display: block;
+    align-content: center;
     align-items: center;
     justify-content: center;
     text-align: center; /* Це для тексту в середині елемента */
     background-color: var(--accent-color);
     color: var(--text-color2);
-    font-size: 16px;
+    /* font-size: 16px; */
     font-weight: 500;
     }
 

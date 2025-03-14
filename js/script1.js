@@ -21,11 +21,28 @@ async function loadWords() {
         sets.forEach(set => {
             const btn = document.createElement('li');
             btn.className = 'set_button openModalBtn';
-            btn.textContent = `Set ${set}`;
+            
+            // Знаходимо категорію (припускаємо, що всі слова в сеті мають одну категорію)
+            const category = words.find(word => word.set === set)?.category || 'Unknown';
+            
+            // Створюємо елементи <p> з класом стилів
+            const pSet = document.createElement('p');
+            pSet.textContent = `Set: ${set}`;
+            pSet.classList.add('set_info');
+            
+            const pCategory = document.createElement('p');
+            pCategory.textContent = `${category}`;
+            pCategory.classList.add('category_info');
+            
+            // Додаємо їх до <li>
+            btn.appendChild(pSet);
+            btn.appendChild(pCategory);
+
             btn.onclick = () => {
                 const wordList = words.filter(word => word.set === set);
                 openModal(set, wordList);
             };
+            
             container.appendChild(btn);
         });
     } catch (error) {

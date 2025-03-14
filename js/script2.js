@@ -1,3 +1,60 @@
+async function loadWords() {
+    try {
+        // Завантажуємо дані з JSON
+        const response = await fetch('words.json');
+        const words = await response.json();
+
+        // Формуємо унікальні набори
+        const sets = [...new Set(words.map(w => w.set))].sort();
+        const container = document.getElementById('sets');
+        
+        if (!container) {
+            console.error("Елемент 'sets' не знайдено. (main page)");
+            return;
+        }
+
+        // Створюємо кнопки для кожного набору
+        sets.forEach(set => {
+            const btn = document.createElement('li');
+            btn.className = 'set_button openModalBtn';
+            btn.textContent = `Set ${set}`;
+            
+            // Знаходимо категорію (припускаємо, що всі слова в сеті мають одну категорію)
+            const category = words.find(word => word.set === set)?.category || 'Unknown';
+            
+            // Створюємо елементи <p> з класом стилів
+            const pSet = document.createElement('p');
+            pSet.textContent = `Set: ${set}`;
+            pSet.classList.add('set-info');
+            
+            const pCategory = document.createElement('p');
+            pCategory.textContent = `Category: ${category}`;
+            pCategory.classList.add('category-info');
+            
+            // Додаємо їх до <li>
+            btn.appendChild(pSet);
+            btn.appendChild(pCategory);
+
+            btn.onclick = () => {
+                const wordList = words.filter(word => word.set === set);
+                openModal(set, wordList);
+                
+                // Оновлюємо заголовок картки з номером сету та категорією
+                const cardTitleResult = document.getElementById('cardTitleResult');
+                if (cardTitleResult) {
+                    cardTitleResult.textContent = `Set #${set}: ${category}`;
+                }
+            };
+            
+            container.appendChild(btn);
+        });
+    } catch (error) {
+        console.error("Помилка при завантаженні даних:", error);
+    }
+}
+
+
+// Додаємо основний ігровий функціонал
 let currentIndex = 0;
 let selectedWords = [];
 let shuffledWords = [];
@@ -16,6 +73,7 @@ const gameFunctions = {
     3: tfDuel,
     4: testGame4
 };
+
 
 function updateProgressBar() {
     if (!shuffledWords.length) return;
@@ -100,10 +158,11 @@ async function loadTrainingWords() {
         selectedWords = words.filter(word => word.set == setNumber);
         if (!selectedWords.length) return console.error(`Немає слів для сету ${setNumber}.`);
         
+        const category = selectedWords[0]?.category || 'Unknown';
         elements.forEach(element => {
-            element.textContent = `set #${setNumber}`;
+            element.textContent = `Set #${setNumber} - ${category}`;
         });
-        document.getElementById('cardTitleResult').textContent = `set #${setNumber}`;
+        document.getElementById('cardTitleResult').textContent = `Set #${setNumber} - ${category}`;
         
         shuffleWords();
     } catch (error) {
@@ -126,7 +185,7 @@ function showNextWord() {
     lastClickTime = Date.now();
     
     if (currentIndex < shuffledWords.length - 1) {
-        startMemorizeGame(++currentIndex);
+        startMemorixeGame(++currentIndex);
         updateProgressBar(); // Оновлюємо лінію прогресу
     } else {
         endGame();
