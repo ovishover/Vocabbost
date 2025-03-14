@@ -36,7 +36,7 @@ body {
 }
 
 .block_scroll {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 a {

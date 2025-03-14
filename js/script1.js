@@ -1,6 +1,6 @@
 // ======== СКРИПТ ДЛЯ ГОЛОВНОЇ СТОРІНКИ ==========
 
-
+let category
 // ======== ЗАВАНТАЖЕННЯ СЛІВ ========
 async function loadWords() {
     try {
@@ -23,7 +23,7 @@ async function loadWords() {
             btn.className = 'set_button openModalBtn';
             
             // Знаходимо категорію (припускаємо, що всі слова в сеті мають одну категорію)
-            const category = words.find(word => word.set === set)?.category || 'Unknown';
+             category = words.find(word => word.set === set)?.category || 'Unknown';
             
             // Створюємо елементи <p> з класом стилів
             const pSet = document.createElement('p');
@@ -67,7 +67,7 @@ function openModal(set, words) {
         return;
     }
 
-    modalTitle.textContent = `Set ${set}`;
+    modalTitle.textContent = `Set ${set} - ${category}`;
 
     if (!Array.isArray(words) || words.length === 0) {
         modalWordList.innerHTML = "<p>Список слів не знайдено</p>";

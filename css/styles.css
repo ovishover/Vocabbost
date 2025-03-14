@@ -530,7 +530,7 @@ section {
     z-index: 101;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 300px;
-    height: 500px;
+    height: 605px;
     z-index: 1000;
 }
 
@@ -575,7 +575,7 @@ margin: 15px;
 }
 
 #modalWordList{
-    padding: 15px 10px 15px 10px;
+    padding: 0px 10px 15px 10px;
 }
 
 #modalTitle {
@@ -626,16 +626,20 @@ margin: 15px;
 
 .list_item {
     width: 100%;
-    height: 35px;
-    display: flex;
+    height: 40px;
+    display: flex
+;
     justify-content: space-around;
     align-items: center;
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+    margin-top: 5px;
 }
 
 .list_item div {
     /* display: block; */
     width: 125px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     align-items: center;
     text-align: center;
