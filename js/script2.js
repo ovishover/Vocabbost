@@ -3,7 +3,7 @@ let selectedWords = [];
 let shuffledWords = [];
 let currentGame = null;
 let lastClickTime = 0;
-const minInterval = 300;
+const minInterval = 600;
 let header = document.querySelector('.header_title');
 let results = [];
 let correctAnswers = 0;
@@ -148,6 +148,8 @@ function ChooseTranslate() {
     }
 
     function askQuestion(wordObj) {
+        if (Date.now() - lastClickTime < minInterval) return console.log("Занадто швидке натискання!");
+        lastClickTime = Date.now();
         let choices = getRandomChoices(wordObj.translate, shuffledWords);
         document.getElementById("word2").textContent = wordObj.word;
         let answersContainer = document.getElementById("answers_container");
@@ -175,13 +177,14 @@ function ChooseTranslate() {
             updateProgressBar();
             askQuestion(shuffledWords[currentIndex]);
         } else {
-            document.getElementById("result-container").textContent = `Game over! Correct: ${correctAnswers}/${results.length}`;
+            endGame();
+            document.getElementById("resultMsg").textContent = `Game over!`;
+            document.getElementById("resultCount").textContent = `${correctAnswers}/${results.length}`;
         }
     }
 
     nextQuestion();
 }
-
 
 
 function testGame3() { header.innerHTML = 'Anagram'; }

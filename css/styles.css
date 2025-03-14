@@ -194,7 +194,7 @@ section {
 
 .demoImg{
     /* display: block; */
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     align-items: center; 
 }
@@ -504,7 +504,7 @@ margin: 15px;
     font-weight: 600;
 }
 
-.resultMsg{
+.resultMsg, .resultCount{
     color: var(--text-color);
     font-size: 26px;
     font-weight: 600;
