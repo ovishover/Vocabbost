@@ -17,7 +17,7 @@ const gameFunctions = {
 
 function updateProgressBar() {
     if (!shuffledWords.length) return;
-    let progress = ((currentIndex + 1) / shuffledWords.length) * 100; // Від 1 до 100%
+    let progress = (currentIndex / shuffledWords.length) * 100; // Від 0 до 100%
     document.querySelector('.header_progress').style.setProperty('--progress', `${progress}%`);
 }
 
@@ -135,11 +135,13 @@ function ChooseTranslate() {
     shuffleWords();
     header.innerHTML = 'Translation';
     currentIndex = 0;
-    updateProgressBar();
+    updateProgressBar(); // Оновлюємо шкалу прогресу перед початком гри
 
     // Додаємо аудіофайли
     const correctSound = new Audio('./sounds/correct.mp3');
     const wrongSound = new Audio('./sounds/wrong.mp3');
+
+    let firstAttemptCorrect = 0; // Кількість правильних відповідей з першої спроби
 
     function getRandomChoices(correctAnswer, allWords) {
         let choices = [correctAnswer];
@@ -157,10 +159,13 @@ function ChooseTranslate() {
         let choices = getRandomChoices(wordObj.translate, shuffledWords);
         let wordElement = document.getElementById("word2");
         wordElement.textContent = wordObj.word;
-        wordElement.classList.remove("flash"); // Очищуємо анімацію перед новим питанням
+        wordElement.classList.remove("flash");
 
         let answersContainer = document.getElementById("answers_container");
         answersContainer.innerHTML = "";
+
+        let mistakeRegistered = false; // Чи була зарахована помилка за це слово
+        let firstAttempt = true; // Чи це перша спроба відповісти на це слово
 
         choices.forEach(choice => {
             let answerButton = document.createElement("li");
@@ -169,30 +174,46 @@ function ChooseTranslate() {
 
             answerButton.addEventListener("click", () => {
                 let isCorrect = choice === wordObj.translate;
-                results.push({ word: wordObj.word, correct: isCorrect });
-                correctAnswers += isCorrect ? 1 : 0;
 
-                // Відтворюємо відповідний звук
+                if (!isCorrect && !mistakeRegistered) {
+                    results.push({ word: wordObj.word, correct: false });
+                    mistakeRegistered = true;
+                }
+
                 if (isCorrect) {
+                    results.push({ word: wordObj.word, correct: true });
+
+                    if (firstAttempt) {
+                        firstAttemptCorrect++; // Якщо вірна відповідь з першої спроби
+                    }
+
                     correctSound.play();
                 } else {
                     wrongSound.play();
-                    wordElement.classList.add("flash"); // Додаємо ефект хитання
+                    wordElement.classList.add("flash");
                 }
-                 // Додаємо підсвічування
+
                 answerButton.classList.add(isCorrect ? "correct" : "incorrect");
 
                 // Блокування кнопок після вибору
                 document.querySelectorAll(".choose_button").forEach(btn => btn.style.pointerEvents = "none");
 
-                updateProgressBar();
+                if (isCorrect) {
+                    setTimeout(() => {
+                        wordElement.classList.remove("flash");
+                        currentIndex++;
+                        updateProgressBar(); // Оновлюємо шкалу після зміни запитання
+                        nextQuestion();
+                    }, 800);
+                } else {
+                    setTimeout(() => {
+                        wordElement.classList.remove("flash");
+                        document.querySelectorAll(".choose_button").forEach(btn => btn.style.pointerEvents = "auto");
+                        document.querySelectorAll(".incorrect").forEach(btn => btn.classList.remove("incorrect"));
+                    }, 800);
+                }
 
-                // Пауза перед наступним питанням
-                setTimeout(() => {
-                    wordElement.classList.remove("flash"); // Забираємо хитання перед наступним словом
-                    currentIndex++;
-                    nextQuestion();
-                }, 800); // 800 мс для анімації
+                firstAttempt = false; // Після першого вибору спроба більше не рахується як перша
             });
 
             answersContainer.appendChild(answerButton);
@@ -205,12 +226,14 @@ function ChooseTranslate() {
         } else {
             endGame();
             document.getElementById("resultMsg").textContent = `Game over!`;
-            document.getElementById("resultCount").textContent = `${correctAnswers}/${results.length}`;
+            document.getElementById("resultCount").textContent = `${firstAttemptCorrect}/${shuffledWords.length}`;
         }
     }
 
     nextQuestion();
 }
+
+
 
 
 
