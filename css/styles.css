@@ -40,6 +40,8 @@ header {
     left: 0;
     height: 3px;
     background-color: var(--accent-color);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     width: var(--progress);
     transition: width 0.5s linear;
     z-index: 11;
@@ -216,7 +218,7 @@ section {
 }
 
 .cardIcon{
-    /* display: block; */
+    /* display: none; */
     justify-items: center;
     margin-top: 20px;
     margin-bottom: 20px;

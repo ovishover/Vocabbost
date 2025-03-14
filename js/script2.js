@@ -131,6 +131,8 @@ function showNextWord() {
 
 
 function ChooseTranslate() {
+    // correctAnswers = 0;
+    results = [];
     shuffleWords();
     header.innerHTML = 'Translation';
     currentIndex = 0; // Скидаємо лічильник перед стартом гри
