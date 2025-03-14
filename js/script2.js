@@ -68,7 +68,7 @@ const elements = document.querySelectorAll('.set_card_title');
 let timerInterval = null; // Робимо змінну глобальною
 
 const gameFunctions = {
-    1: startMemorixeGame,
+    1: startMemorizeGame,
     2: ChooseTranslate,
     3: tfDuel,
     4: testGame4
@@ -170,8 +170,8 @@ async function loadTrainingWords() {
     }
 }
 
-function startMemorixeGame(index) {
-    header.innerHTML = 'Memorixe';
+function startMemorizeGame(index) {
+    header.innerHTML = 'Memorize';
     let wordObj = shuffledWords[index];
     if (!wordObj) return console.error("Немає слова для показу.");
     document.getElementById('word').textContent = wordObj.word;
@@ -185,7 +185,7 @@ function showNextWord() {
     lastClickTime = Date.now();
     
     if (currentIndex < shuffledWords.length - 1) {
-        startMemorixeGame(++currentIndex);
+        startMemorizeGame(++currentIndex);
         updateProgressBar(); // Оновлюємо лінію прогресу
     } else {
         endGame();

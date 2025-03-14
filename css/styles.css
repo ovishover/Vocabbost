@@ -145,8 +145,8 @@ padding-top: 5px;
 
 .card_timer{
     text-align: center;
-    color: var(--text-color);
-    font-size: 28px;
+    color: var(--accent-color);
+    font-size: 20px;
     font-weight: 600;
     margin: 20px auto;
 }
@@ -224,6 +224,14 @@ section {
     align-items: center; 
 }
 
+.demoImgError {
+    display: block;
+    width: 95%;
+    height: auto;
+    align-items: center;
+    border-radius: 35px;
+    padding-top: 25px;
+}
 
 /*  GAVE AREA SECTION */
 #game_area{
@@ -247,6 +255,12 @@ section {
     justify-content: center;
     margin: 20px auto;
     animation: scaleUpDown 2s ease-in-out infinite;
+}
+
+.cardError{
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
 }
 
 @keyframes scaleUpDown {
@@ -348,6 +362,14 @@ section {
     text-align: center;
 }
 
+.trainCard_error{
+    width: 400px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    margin: 15px auto;
+    height: 420px;
+
+}
 
 .set_card_title{
     color: var(--text-color);
