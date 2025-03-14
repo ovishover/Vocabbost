@@ -280,7 +280,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 65px;
+    padding-top: 120px;
 }
 
 .cardBtn2{
@@ -288,7 +288,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 0px;
+    padding-top: 15px;
 }
 
 .cardBtn3{
@@ -296,7 +296,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 130px;
     justify-content: space-around;
     width: 280px;
 }
@@ -319,7 +319,7 @@ section {
 }
 
 .target_word{
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 600;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -334,7 +334,7 @@ section {
 }
 
 .trans_word{
-    font-size: 32px;
+    font-size: 20px;
     font-weight: 500;
     color: var(--text-color);
     padding-top: 0px;
@@ -372,7 +372,7 @@ section {
 }
 
 .set_card_title{
-    color: var(--text-color);
+    color: #64646447;
     font-weight: 500;
     font-size: 16px;
 }
