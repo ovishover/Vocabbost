@@ -137,6 +137,10 @@ function ChooseTranslate() {
     currentIndex = 0;
     updateProgressBar();
 
+    // Додаємо аудіофайли
+    const correctSound = new Audio('./sounds/correct.mp3');
+    const wrongSound = new Audio('./sounds/wrong.mp3');
+
     function getRandomChoices(correctAnswer, allWords) {
         let choices = [correctAnswer];
         while (choices.length < 4) {
@@ -168,13 +172,15 @@ function ChooseTranslate() {
                 results.push({ word: wordObj.word, correct: isCorrect });
                 correctAnswers += isCorrect ? 1 : 0;
 
-                // Додаємо підсвічування
-                answerButton.classList.add(isCorrect ? "correct" : "incorrect");
-
-                // Якщо відповідь неправильна – додаємо анімацію хитання слова
-                if (!isCorrect) {
-                    wordElement.classList.add("flash");
+                // Відтворюємо відповідний звук
+                if (isCorrect) {
+                    correctSound.play();
+                } else {
+                    wrongSound.play();
+                    wordElement.classList.add("flash"); // Додаємо ефект хитання
                 }
+                 // Додаємо підсвічування
+                answerButton.classList.add(isCorrect ? "correct" : "incorrect");
 
                 // Блокування кнопок після вибору
                 document.querySelectorAll(".choose_button").forEach(btn => btn.style.pointerEvents = "none");
@@ -205,6 +211,7 @@ function ChooseTranslate() {
 
     nextQuestion();
 }
+
 
 
 
