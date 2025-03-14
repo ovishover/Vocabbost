@@ -131,12 +131,11 @@ function showNextWord() {
 
 
 function ChooseTranslate() {
-    // correctAnswers = 0;
     results = [];
     shuffleWords();
     header.innerHTML = 'Translation';
-    currentIndex = 0; // Скидаємо лічильник перед стартом гри
-    updateProgressBar(); // Оновлюємо шкалу на початку, щоб вона була 0%
+    currentIndex = 0;
+    updateProgressBar();
 
     function getRandomChoices(correctAnswer, allWords) {
         let choices = [correctAnswer];
@@ -150,8 +149,12 @@ function ChooseTranslate() {
     function askQuestion(wordObj) {
         if (Date.now() - lastClickTime < minInterval) return console.log("Занадто швидке натискання!");
         lastClickTime = Date.now();
+
         let choices = getRandomChoices(wordObj.translate, shuffledWords);
-        document.getElementById("word2").textContent = wordObj.word;
+        let wordElement = document.getElementById("word2");
+        wordElement.textContent = wordObj.word;
+        wordElement.classList.remove("flash"); // Очищуємо анімацію перед новим питанням
+
         let answersContainer = document.getElementById("answers_container");
         answersContainer.innerHTML = "";
 
@@ -159,22 +162,39 @@ function ChooseTranslate() {
             let answerButton = document.createElement("li");
             answerButton.textContent = choice;
             answerButton.classList.add("choose_button");
+
             answerButton.addEventListener("click", () => {
-                results.push({ word: wordObj.word, correct: choice === wordObj.translate });
-                correctAnswers += choice === wordObj.translate ? 1 : 0;
+                let isCorrect = choice === wordObj.translate;
+                results.push({ word: wordObj.word, correct: isCorrect });
+                correctAnswers += isCorrect ? 1 : 0;
 
-                updateProgressBar(); // Оновлюємо шкалу перед зміною індексу
-                currentIndex++; // Тепер збільшуємо лічильник
+                // Додаємо підсвічування
+                answerButton.classList.add(isCorrect ? "correct" : "incorrect");
 
-                nextQuestion();
+                // Якщо відповідь неправильна – додаємо анімацію хитання слова
+                if (!isCorrect) {
+                    wordElement.classList.add("flash");
+                }
+
+                // Блокування кнопок після вибору
+                document.querySelectorAll(".choose_button").forEach(btn => btn.style.pointerEvents = "none");
+
+                updateProgressBar();
+
+                // Пауза перед наступним питанням
+                setTimeout(() => {
+                    wordElement.classList.remove("flash"); // Забираємо хитання перед наступним словом
+                    currentIndex++;
+                    nextQuestion();
+                }, 800); // 800 мс для анімації
             });
+
             answersContainer.appendChild(answerButton);
         });
     }
 
     function nextQuestion() {
         if (currentIndex < shuffledWords.length) {
-            updateProgressBar();
             askQuestion(shuffledWords[currentIndex]);
         } else {
             endGame();
@@ -185,6 +205,8 @@ function ChooseTranslate() {
 
     nextQuestion();
 }
+
+
 
 
 function testGame3() { header.innerHTML = 'Anagram'; }
