@@ -7,6 +7,7 @@ const minInterval = 600;
 let header = document.querySelector('.header_title');
 let results = [];
 let correctAnswers = 0;
+const elements = document.querySelectorAll('.cardTitle');
 
 const gameFunctions = {
     1: startMemorizeGame,
@@ -98,7 +99,9 @@ async function loadTrainingWords() {
         selectedWords = words.filter(word => word.set == setNumber);
         if (!selectedWords.length) return console.error(`Немає слів для сету ${setNumber}.`);
         
-        document.getElementById('cardTitleGame').textContent = `set #${setNumber}`;
+        elements.forEach(element => {
+            element.textContent = `set #${setNumber}`;
+        });
         document.getElementById('cardTitleResult').textContent = `set #${setNumber}`;
         
         shuffleWords();
