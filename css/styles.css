@@ -1,6 +1,7 @@
 :root {
     /* --accent-color: #D7C6A8; */
     --accent-color: #7297ea;
+    /* --accent-color: #407bff; */
     --text-color: #aaaaaa;
     --text-color2: #ffffff;
     --margin-calc: 40px;
@@ -126,6 +127,14 @@ header {
     font-weight: 600;
 }
 
+.card_timer{
+    text-align: center;
+    color: var(--text-color);
+    font-size: 28px;
+    font-weight: 600;
+    margin: 20px auto;
+}
+
 /*  SECTIONS */
 section {
     /* padding-top: 15px; */
@@ -236,12 +245,32 @@ section {
     }
   }
 
-.cardBtn{
-    height: 80px;
+  .cardBtn1{
+    /* height: 80px; */
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 65px;
 }
+
+.cardBtn2{
+    /* height: 80px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+}
+
+.cardBtn3{
+    /* height: 80px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    justify-content: space-around;
+    width: 280px;
+}
+
 #word, #word2 {
     /* font-size: 40px;
     font-weight: 600;
@@ -249,22 +278,37 @@ section {
     letter-spacing: 0.05em; */
 }
 
+.correct-card {
+    background-color: green !important;
+    transition: background-color 0.3s ease;
+}
+
+.incorrect-card {
+    background-color: red !important;
+    transition: background-color 0.3s ease;
+}
+
 .target_word{
     font-size: 36px;
     font-weight: 600;
-        padding-top: 60px;
-    padding-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 300px;
     letter-spacing: 0.05em;
     color: #5a5a5a;
     border-radius: 20px;
-
+}
+.elementHidden{
+    position: relative;
+    z-index: -100;
 }
 
 .trans_word{
     font-size: 32px;
     font-weight: 500;
     color: var(--text-color);
-    padding-bottom: 130px;
+    padding-top: 0px;
+    padding-bottom: 20px;
 }
 
 #translation {
@@ -289,7 +333,7 @@ section {
 }
 
 
-.cardTitle{
+.set_card_title{
     color: var(--text-color);
     font-weight: 500;
     font-size: 16px;
@@ -318,7 +362,6 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 70px;
   }
 
 
@@ -526,17 +569,14 @@ margin: 15px;
     animation: fadeIn 0.6s ease-in-out;
 } */
   .correct {
-    background-color: #13c919 !important; /* Зелений */
-    color: white;
+    background-color: #b4ffb7b8 !important; /* Зелений */
+    color: rgb(0, 0, 0);
 }
 
 .incorrect {
-    background-color: #f44a3d !important; /* Червоний */
-    color: white;
+    background-color: #ffd9d6 !important; /* Червоний */
+    color: rgb(0, 0, 0);
 }
-
-
-
 
 .resultMsg, .resultCount{
     color: var(--text-color);

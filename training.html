@@ -66,13 +66,13 @@
                     <p class="cardName">Translation</p>
                 </div>
             </li>
-            <li onclick="startGame(4)" class="trainItems">
+            <li onclick="startGame(3)" class="trainItems">
                 <img src="./images/bool8.svg" alt="training" class="demoImg">
                 <div class="cardNameContainer">
                     <p class="cardName">TF Duel</p>
                 </div>
             </li>
-            <li onclick="startGame(3)" class="trainItems">
+            <li onclick="startGame(4)" class="trainItems">
                 <img src="./images/anagram4.svg" alt="training" class="demoImg">
                 <div class="cardNameContainer">
                     <p class="cardName">Anagram</p>
@@ -88,15 +88,18 @@
     <section id="game_area" class="bellow_header">
         <div class="container">
 
-            <div id="1" class="trainCard" alt="Memorize" style="display: none;">
-                <div class="">
-                    <p id="cardTitleGame" class="cardTitle">set #</p>
+            <div id="1" class="trainCard" alt="Memorixe" style="display: none;">
+                <div class="set_card_title">
+                    <p id="cardTitleGame">set #</p>
                 </div>
-                <div class="cardWord">
-                    <div id="word" class="target_word"></div>
-                    <div id="translation" class="trans_word"></div>
+                <div class="card_timer elementHidden">Time left: 30s</div>
+                <div class="target_word">
+                    <div id="word"></div>
                 </div>
-                <div class="cardBtn">
+                <div class="trans_word">
+                    <div id="translation"></div>
+                </div>
+                <div class="cardBtn1">
                     <div  id="playSoundBtn" class="sound_button">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000" viewBox="-2.4 -2.4 28.8 28.8" class="sound_icon"><g stroke="#ffffff" stroke-width="1.6"><path stroke-linecap="round" d="M22 17v-5c0-1.821-.487-3.53-1.338-5M2 18v-6C2 6.477 6.477 2 12 2c1.821 0 3.53.487 5 1.338"/><path d="M8 15.187c0-.578 0-.867-.069-1.097a1.529 1.529 0 0 0-1.095-1.059c-.225-.054-.5-.03-1.052.015-.956.079-1.435.118-1.825.27-.899.347-1.585 1.123-1.846 2.088C2 15.823 2 16.324 2 17.328v.186c0 1.03 0 1.544.123 1.979a3.102 3.102 0 0 0 1.588 1.944c.392.195.878.275 1.85.436.645.106.968.16 1.229.106a1.521 1.521 0 0 0 1.119-1C8 20.718 8 20.376 8 19.693v-4.506ZM16 15.187c0-.578 0-.867.069-1.097.16-.531.576-.934 1.095-1.059.225-.054.5-.03 1.051.015.957.079 1.436.118 1.826.27.899.347 1.585 1.123 1.846 2.088.113.419.113.92.113 1.924v.186c0 1.03 0 1.544-.123 1.979a3.103 3.103 0 0 1-1.588 1.944c-.392.195-.878.275-1.85.436-.645.106-.968.16-1.229.106a1.521 1.521 0 0 1-1.119-1C16 20.718 16 20.376 16 19.693v-4.506Z"/><path stroke-linecap="round" d="M12 6.5v5M15 8v2M9 8v2"/></g></svg>
                     </div> 
@@ -108,27 +111,47 @@
             </div>
 
             <div id="2" class="trainCard" alt="Audio Training" style="display: none;">
+                <div class="set_card_title">
+                    <p id="cardTitleGame">set #</p>
+                </div>
 
-                <div class="">
-                    <p id="cardTitleGame" class="cardTitle">set #</p>
+                <div class="card_timer elementHidden">Time left: 30s</div>
+
+                <div id="question-container" class="target_word">
+                    <div id="word2" class="target_word"></div>
+                </div>
+
+                <div class="trans_word elementHidden">
+                    <div id="translation"></div>
                 </div>
 
                 <div>
-                    <!-- Контейнер для питання -->
-                    <div id="question-container">
-                        <div id="word2" class="target_word"></div>
+                    <div class="cardBtn2">
+                        <ul id="answers_container" class="sets"></ul>
                     </div>
-
-                    <!-- Контейнер для варіантів відповідей -->
-                    <ul id="answers_container" class="sets"></ul>
-
-                    <!-- Контейнер для результатів після завершення гри -->
-                    <div id="result-container"></div>
                 </div>
-
             </div>
 
-            <div id="3" class="trainCard" alt="Anagram" style="display: none;">
+            <div id="3" class="trainCard" alt="TF Duel" style="display: none;">
+                <div class="set_card_title">
+                    <p id="cardTitleGame">set #</p>
+                </div>
+                <div class="cardWord">
+                    <div id="timer" class="card_timer">Time left: 30s</div>
+                    <div id="word3" class="target_word"></div>
+                    <div id="translation2" class="trans_word"></div>
+                </div>
+                <div class="cardBtn3">
+                    <div id="no_button" class="set_button">
+                        <p class="name_button">False</p>
+                    </div>
+                    <div id="yes_button" class="set_button">
+                        <p class="name_button">True</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="4" class="trainCard" alt="Anagram" style="display: none;">
                 <div class="">
                     <p id="cardTitleGame" class="cardTitle">set #</p>
                 </div>
@@ -147,24 +170,7 @@
                 </div>
             </div>
 
-            <div id="4" class="trainCard" alt="TF Duel" style="display: none;">
-                <div class="">
-                    <p id="cardTitleGame" class="cardTitle">set #</p>
-                </div>
-                <div class="cardWord">
-                    <div id="word"></div>
-                    <div id="translation"></div>
-                </div>
-                <div class="cardBtn">
-                    <div  id="playSoundBtn" class="sound_button">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000" viewBox="-2.4 -2.4 28.8 28.8" class="sound_icon"><g stroke="#ffffff" stroke-width="1.6"><path stroke-linecap="round" d="M22 17v-5c0-1.821-.487-3.53-1.338-5M2 18v-6C2 6.477 6.477 2 12 2c1.821 0 3.53.487 5 1.338"/><path d="M8 15.187c0-.578 0-.867-.069-1.097a1.529 1.529 0 0 0-1.095-1.059c-.225-.054-.5-.03-1.052.015-.956.079-1.435.118-1.825.27-.899.347-1.585 1.123-1.846 2.088C2 15.823 2 16.324 2 17.328v.186c0 1.03 0 1.544.123 1.979a3.102 3.102 0 0 0 1.588 1.944c.392.195.878.275 1.85.436.645.106.968.16 1.229.106a1.521 1.521 0 0 0 1.119-1C8 20.718 8 20.376 8 19.693v-4.506ZM16 15.187c0-.578 0-.867.069-1.097.16-.531.576-.934 1.095-1.059.225-.054.5-.03 1.051.015.957.079 1.436.118 1.826.27.899.347 1.585 1.123 1.846 2.088.113.419.113.92.113 1.924v.186c0 1.03 0 1.544-.123 1.979a3.103 3.103 0 0 1-1.588 1.944c-.392.195-.878.275-1.85.436-.645.106-.968.16-1.229.106a1.521 1.521 0 0 1-1.119-1C16 20.718 16 20.376 16 19.693v-4.506Z"/><path stroke-linecap="round" d="M12 6.5v5M15 8v2M9 8v2"/></g></svg>
-                    </div> 
-
-                    <div class="set_button">
-                        <p class="name_button">Got it</p>
-                    </div>
-                </div>
-            </div>
+            
             
             <div id="result_menu" class="resultStyles" style="display: none;">
                 <div class="">

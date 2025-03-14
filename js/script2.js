@@ -7,12 +7,13 @@ const minInterval = 600;
 let header = document.querySelector('.header_title');
 let results = [];
 let correctAnswers = 0;
-const elements = document.querySelectorAll('.cardTitle');
+const elements = document.querySelectorAll('.set_card_title');
+let timerInterval = null; // Робимо змінну глобальною
 
 const gameFunctions = {
-    1: startMemorizeGame,
+    1: startMemorixeGame,
     2: ChooseTranslate,
-    3: testGame3,
+    3: tfDuel,
     4: testGame4
 };
 
@@ -110,8 +111,8 @@ async function loadTrainingWords() {
     }
 }
 
-function startMemorizeGame(index) {
-    header.innerHTML = 'Memorize';
+function startMemorixeGame(index) {
+    header.innerHTML = 'Memorixe';
     let wordObj = shuffledWords[index];
     if (!wordObj) return console.error("Немає слова для показу.");
     document.getElementById('word').textContent = wordObj.word;
@@ -242,7 +243,130 @@ function ChooseTranslate() {
 
 
 
-function testGame3() { header.innerHTML = 'Anagram'; }
-function testGame4() { header.innerHTML = 'Yes | No'; }
 
+
+
+function tfDuel() {
+    header.innerHTML = 'False | True';
+    results = [];
+    shuffleWords();
+    currentIndex = 0;
+    updateProgressBar();
+
+    const correctSound = new Audio('./sounds/correct.mp3');
+    const wrongSound = new Audio('./sounds/wrong.mp3');
+
+    let firstAttemptCorrect = 0; 
+    let timeLeft = 30;
+
+    const wordElement = document.getElementById("word3");
+    const translationElement = document.getElementById("translation2");
+    const yesButton = document.getElementById("yes_button");
+    const noButton = document.getElementById("no_button");
+    const timerElement = document.getElementById("timer");
+    const effectElement = document.getElementById("word3"); // Елемент для кольорової анімації
+
+    function startTimer() {
+        if (!timerElement) return console.error("Елемент #timer не знайдено!");
+
+        // Очистка попереднього таймера перед запуском нового
+        if (timerInterval) {
+            clearInterval(timerInterval);
+            timerInterval = null; 
+        }
+
+        timeLeft = 30; // Скидаємо час на початкове значення
+        timerElement.textContent = `Time left: ${timeLeft}s`;
+
+        timerInterval = setInterval(() => {
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+                endGame();
+            } else {
+                timerElement.textContent = `Time left: ${timeLeft}s`;
+                timeLeft--;
+            }
+        }, 1000);
+    }
+
+    function getRandomTranslation(wordObj) {
+        if (Math.random() > 0.5) {
+            return { translation: wordObj.translate, isCorrect: true };
+        } else {
+            let randomWord;
+            do {
+                randomWord = shuffledWords[Math.floor(Math.random() * shuffledWords.length)];
+            } while (randomWord.word === wordObj.word);
+            return { translation: randomWord.translate, isCorrect: false };
+        }
+    }
+
+    function askQuestion() {
+        if (currentIndex >= shuffledWords.length) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            endGame();
+            return;
+        }
+
+        let wordObj = shuffledWords[currentIndex];
+        let { translation, isCorrect } = getRandomTranslation(wordObj);
+
+        wordElement.textContent = wordObj.word;
+        translationElement.textContent = translation;
+
+        wordElement.classList.remove("flash");
+        effectElement.classList.remove("correct", "incorrect");
+
+        yesButton.onclick = () => checkAnswer(true, isCorrect);
+        noButton.onclick = () => checkAnswer(false, isCorrect);
+    }
+
+    function checkAnswer(userChoice, isCorrect) {
+        let answerCorrect = userChoice === isCorrect;
+
+        if (answerCorrect) {
+            results.push({ word: shuffledWords[currentIndex].word, correct: true });
+            firstAttemptCorrect++;
+            correctSound.play();
+            effectElement.classList.add("correct"); // Додаємо зелений ефект
+        } else {
+            results.push({ word: shuffledWords[currentIndex].word, correct: false });
+            wrongSound.play();
+            effectElement.classList.add("incorrect"); // Додаємо червоний ефект
+            wordElement.classList.add("flash"); // Тряска слова при помилці
+        }
+
+        yesButton.style.pointerEvents = "none";
+        noButton.style.pointerEvents = "none";
+
+        setTimeout(() => {
+            wordElement.classList.remove("flash");
+            effectElement.classList.remove("correct", "incorrect");
+            currentIndex++;
+            updateProgressBar();
+
+            yesButton.style.pointerEvents = "auto";
+            noButton.style.pointerEvents = "auto";
+
+            askQuestion();
+        }, 800);
+    }
+
+    function endGame() {
+        document.getElementById(currentGame).style.display = 'none';
+        document.getElementById('result_menu').style.display = 'block';
+        document.getElementById("resultMsg").textContent = `Game over!`;
+        document.getElementById("resultCount").textContent = `${firstAttemptCorrect}/${shuffledWords.length}`;
+    }
+
+    startTimer();
+    askQuestion();
+}
+
+
+
+
+function testGame4() { header.innerHTML = 'Anagram'; }
 document.addEventListener('DOMContentLoaded', loadTrainingWords);
