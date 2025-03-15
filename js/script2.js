@@ -107,6 +107,7 @@ function startGame(gameId) {
     let gameElement = document.getElementById(String(currentGame));
     if (!gameElement) return console.error(`Елемент з ID '${currentGame}' не знайдено.`);
     gameElement.style.display = 'block';
+    document.getElementById("footer").style.display = "none";
     
     currentIndex = 0;
     gameFunctions[currentGame]?.(currentIndex);
