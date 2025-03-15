@@ -313,7 +313,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 120px;
+    padding-top: 140px;
 }
 
 .cardBtn2{
@@ -321,7 +321,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 15px;
+    padding-top: 40px;
 }
 
 .cardBtn3{
@@ -329,7 +329,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 130px;
+    padding-top: 155px;
     justify-content: space-around;
     width: 100%;
 }
@@ -384,7 +384,7 @@ section {
 }
 
 .trainCard, .resultStyles{
-    height: 400px;
+    height: 415px;
     width: 300px;
     padding: 20px 20px 30px 20px;
     border-radius: 15px;
