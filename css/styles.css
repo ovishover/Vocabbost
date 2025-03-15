@@ -29,7 +29,7 @@ footer {
 }
 
 .footer_div2{
-    background-image: url('../images/space2.svg');
+    background-image: url('../images/space4.svg');
     background-size: cover; /* Зображення покриває весь елемент */
     background-position: center; /* Центрує зображення */
     background-repeat: no-repeat; /* Забороняє повторення зображення */
@@ -245,7 +245,7 @@ section {
 
 .demoImg{
     /* display: block; */
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
     align-items: center; 
 }
