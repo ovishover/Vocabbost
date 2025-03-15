@@ -11,6 +11,22 @@
 
 /*  HEADER */
 
+
+footer {
+    position: relative;
+    top: 90px;
+    z-index: 0;
+}
+
+.footer_div {
+    background-image: url('../images/ice_sea2.svg');
+    background-size: cover; /* Зображення покриває весь елемент */
+    background-position: center; /* Центрує зображення */
+    background-repeat: no-repeat; /* Забороняє повторення зображення */
+    height: 450px; /* Висота контейнера */
+    width: 100%; /* Ширина на всю доступну ширину */
+}
+
 header {
     background-color: #ffffff;
     position: fixed;
