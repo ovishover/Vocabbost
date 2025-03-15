@@ -38,7 +38,7 @@ footer {
  
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .footer_div, .footer_div2 {
         width: 400px;
     }
