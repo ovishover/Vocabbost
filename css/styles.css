@@ -24,7 +24,7 @@ footer {
     background-position: center; /* Центрує зображення */
     background-repeat: no-repeat; /* Забороняє повторення зображення */
     height: 450px; /* Висота контейнера */
-    width: 100%; /* Ширина на всю доступну ширину */
+    width: 100%;
 }
 
 header {
