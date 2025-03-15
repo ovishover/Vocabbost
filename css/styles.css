@@ -286,7 +286,7 @@ section {
 .cardIcon{
     display: flex;
     justify-content: center;
-    margin: 20px auto;
+    margin: 15px auto;
     animation: scaleUpDown 2s ease-in-out infinite;
 }
 
@@ -321,7 +321,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 40px;
+    padding-top: 30px;
 }
 
 .cardBtn3{
@@ -329,7 +329,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 155px;
+    padding-top: 145px;
     justify-content: space-around;
     width: 100%;
 }
@@ -653,7 +653,7 @@ padding: 10px 10px 5px 10px;
     color: var(--text-color);
     font-size: 26px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .list_item {
