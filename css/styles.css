@@ -29,11 +29,11 @@ footer {
 }
 
 .footer_div2{
-    background-image: url('../images/space.svg');
+    background-image: url('../images/space2.svg');
     background-size: cover; /* Зображення покриває весь елемент */
     background-position: center; /* Центрує зображення */
     background-repeat: no-repeat; /* Забороняє повторення зображення */
-    height: 350px; /* Висота контейнера */
+    height: 380px; /* Висота контейнера */
     width: 100%;
 }
 
@@ -180,7 +180,7 @@ padding-top: 5px;
 /*  SECTIONS */
 section {
     /* padding-top: 15px; */
-    padding-bottom: 15px;
+    /* padding-bottom: 15px; */
     position: relative;
     top: 130px;
     z-index: 0;
@@ -324,7 +324,7 @@ section {
     align-items: center;
     padding-top: 130px;
     justify-content: space-around;
-    width: 280px;
+    width: 100%;
 }
 
 #word, #word2 {

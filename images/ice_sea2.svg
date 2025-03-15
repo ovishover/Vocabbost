@@ -185,6 +185,6 @@
    <path d="m397.81,94.63c-5.88,-3.92 -9.4,-2.21 -11.03,-0.64c3.06,-0.22 8.86,0.12 11.03,1.51c2.3,-0.88 7.97,0.08 10.97,0.99c-1.44,-1.92 -4.71,-4.4 -10.97,-1.86z" fill="#407BFF" id="svg_156"/>
    <path d="m131.29,139.64c-6.19,-2.56 -9.14,-0.33 -10.37,1.43c2.8,-0.77 8.26,-1.52 10.53,-0.63c1.97,-1.23 7.41,-1.38 10.37,-1.09c-1.69,-1.52 -5.19,-3.22 -10.53,0.29z" fill="#407BFF" id="svg_157"/>
   </g>
-  <text fill="#2e5dc5" font-family="Cursive" font-size="20" font-weight="normal" id="svg_158" stroke="#000000" stroke-width="0" style="cursor: move;" text-anchor="middle" transform="matrix(1.19725 0 0 1.07465 -29.9592 -25.3178)" x="238.35" xml:space="preserve" y="406.48">Dive deeper</text>
+  <text fill="#2e5dc5" font-family="Cursive" font-size="22" font-weight="normal" id="svg_158" stroke="#000000" stroke-width="0" text-anchor="middle" transform="matrix(1.19725 0 0 1.07465 -29.9592 -25.3178)" x="238.35" xml:space="preserve" y="404.62">dive deeper</text>
  </g>
 </svg>
