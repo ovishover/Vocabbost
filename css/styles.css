@@ -16,10 +16,20 @@ footer {
     position: relative;
     top: 130px;
     z-index: 0;
+    padding-bottom: 30px;
 }
 
 .footer_div {
     background-image: url('../images/ice_sea2.svg');
+    background-size: cover; /* Зображення покриває весь елемент */
+    background-position: center; /* Центрує зображення */
+    background-repeat: no-repeat; /* Забороняє повторення зображення */
+    height: 370px; /* Висота контейнера */
+    width: 100%;
+}
+
+.footer_div2{
+    background-image: url('../images/space.svg');
     background-size: cover; /* Зображення покриває весь елемент */
     background-position: center; /* Центрує зображення */
     background-repeat: no-repeat; /* Забороняє повторення зображення */
