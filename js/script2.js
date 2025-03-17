@@ -580,8 +580,8 @@ function startAnagramGame() {
         }
     }
 
-    let undoButton = document.getElementById('undo_btn');
-    undoButton.onclick = () => undoMove();
+    // let undoButton = document.getElementById('undo_btn');
+    // undoButton.onclick = () => undoMove();
 
     let clearButton = document.getElementById('clear_btn');
     clearButton.onclick = () => clearWord();
