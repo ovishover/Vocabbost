@@ -66,12 +66,15 @@ let results = [];
 let correctAnswers = 0;
 const elements = document.querySelectorAll('.set_card_title');
 let timerInterval = null; // Робимо змінну глобальною
+const correctSound = new Audio('./sounds/correct.mp3');
+const wrongSound = new Audio('./sounds/wrong.mp3');
+
 
 const gameFunctions = {
     1: startMemorizeGame,
     2: ChooseTranslate,
     3: tfDuel,
-    4: testGame4
+    4: startAnagramGame
 };
 
 
@@ -202,8 +205,6 @@ function ChooseTranslate() {
     updateProgressBar(); // Оновлюємо шкалу прогресу перед початком гри
 
     // Додаємо аудіофайли
-    const correctSound = new Audio('./sounds/correct.mp3');
-    const wrongSound = new Audio('./sounds/wrong.mp3');
 
     let firstAttemptCorrect = 0; // Кількість правильних відповідей з першої спроби
 
@@ -426,7 +427,134 @@ function tfDuel() {
 }
 
 
+function startAnagramGame() {
+    document.getElementById('header_title').innerText = 'Anagram';
+    
+    const gameContainer = document.getElementById('anagramGame');
+    gameContainer.innerHTML = ''; 
+    
+    let wordObj = shuffledWords[currentIndex];
+    if (!wordObj || !wordObj.word) {
+        console.error("Немає слова для гри.");
+        return;
+    }
+
+    let word = wordObj.word.toUpperCase();
+    let letters = word.split('');
+    let shuffledLetters = [...letters].sort(() => Math.random() - 0.5);
+
+    let lettersContainer = document.createElement('div');
+    lettersContainer.id = 'lettersContainer';
+    lettersContainer.classList.add('letters-container');
+
+    let wordContainer = document.createElement('div');
+    wordContainer.id = 'wordContainer';
+    wordContainer.classList.add('word-container');
+
+    let placeholders = [];
+    let selectedLetters = [];
+
+    shuffledLetters.forEach(letter => {
+        let letterBlock = document.createElement('div');
+        letterBlock.classList.add('letter-block');
+        letterBlock.textContent = letter;
+        letterBlock.onclick = () => moveLetter(letterBlock, letter);
+        lettersContainer.appendChild(letterBlock);
+        document.getElementById('translation3').textContent = wordObj.translate;
+    });
+
+    letters.forEach(() => {
+        let placeholder = document.createElement('div');
+        placeholder.classList.add('placeholder');
+        placeholders.push(placeholder);
+        wordContainer.appendChild(placeholder);
+    });
+
+    function moveLetter(block, letter) {
+        if (selectedLetters.length < word.length) {
+            selectedLetters.push(letter);
+            placeholders[selectedLetters.length - 1].textContent = letter;
+    
+            // Замість видалення ховаємо букву
+            block.style.visibility = 'hidden';
+            block.style.pointerEvents = 'none'; // Щоб уникнути повторного кліку
+        }
+    }
+
+    function undoMove() {
+        if (selectedLetters.length > 0) {
+            let lastLetter = selectedLetters.pop();
+            
+            // Відновлюємо текст плейсхолдера
+            placeholders[selectedLetters.length].textContent = '';
+    
+            // Знаходимо прихований блок з цією літерою
+            let letterBlocks = document.querySelectorAll('.letter-block');
+            for (let block of letterBlocks) {
+                if (block.textContent === lastLetter && block.style.visibility === 'hidden') {
+                    block.style.visibility = 'visible';
+                    block.style.pointerEvents = 'auto'; // Дозволяємо знову клікати
+                    break;
+                }
+            }
+        }
+    }
+    
+
+    function clearWord() {
+        selectedLetters = [];
+        placeholders.forEach(p => p.textContent = '');
+        lettersContainer.innerHTML = '';
+
+        shuffledLetters.forEach(letter => {
+            let letterBlock = document.createElement('div');
+            letterBlock.classList.add('letter-block');
+            letterBlock.textContent = letter;
+            letterBlock.onclick = () => moveLetter(letterBlock, letter);
+            lettersContainer.appendChild(letterBlock);
+        });
+    }
+
+    function checkWord() {
+        if (selectedLetters.join('') === word) {
+            correctSound.play();
+            nextWord();
+        } else {
+            wrongSound.play();
+            wordContainer.classList.add('wrong');
+            setTimeout(() => wordContainer.classList.remove('wrong'), 500);
+        }
+    }
+
+    function nextWord() {
+        currentIndex++;
+        updateProgressBar(); // Оновлення шкали прогресу після складання слова
+        
+        if (currentIndex < shuffledWords.length) {
+            startAnagramGame();
+        } else {
+            endGame();
+            document.getElementById("resultMsg").textContent = `Game over!`;
+            document.getElementById("resultCount").textContent = `${correctAnswers}/${shuffledWords.length}`;
+        }
+    }
+
+    let undoButton = document.getElementById('undo_btn');
+    undoButton.onclick = () => undoMove();
+
+    let clearButton = document.getElementById('clear_btn');
+    clearButton.onclick = () => clearWord();
+
+    let checkButton = document.getElementById('check_btn');
+    checkButton.onclick = () => checkWord();
+
+    gameContainer.appendChild(wordContainer);
+    gameContainer.appendChild(lettersContainer);
+
+    updateProgressBar(); // Оновлення шкали прогресу на початку гри
+}
 
 
-function testGame4() { header.innerHTML = 'Anagram'; }
+
+
 document.addEventListener('DOMContentLoaded', loadTrainingWords);
