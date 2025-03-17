@@ -384,6 +384,7 @@ section {
     font-weight: 600;
     padding-top: 10px;
     height: 105px;
+    max-width: 350px;
     display: block;
     align-content: center;
     /* padding-bottom: 10px; */
@@ -465,7 +466,8 @@ section {
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-top: 10px;
-    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
 #answers_container {
@@ -488,7 +490,7 @@ section {
 .set_button{
     height: 60px;
     width: 135px;
-    margin: 5px 0;
+    margin: 10px 0;
     border-radius: 15px;
     display: block;
     align-content: center;
