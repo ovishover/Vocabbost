@@ -201,8 +201,8 @@ section {
 .container {
     max-width: 500px;
     /* padding: 0 15px; */
-    margin: 10px auto;
-    /* display: flex; */
+    margin: 0 auto;
+    display: flex;
     justify-content: center;
 }
 
@@ -420,19 +420,19 @@ section {
     background-color: #ffffff;
     /* display: none; */
     justify-items: center;
-    margin: 15px auto;
+    margin: 10px auto;
     text-align: center;
 }
 
 .anagramCard {
     height: 520px;
     width: 360px;
-    padding: 20px 20px 30px 20px;
+    padding: 15px;
     border-radius: 15px;
     background-color: #ffffff;
     /* display: none; */
     justify-items: center;
-    margin: 15px auto;
+    margin: 10px auto;
     text-align: center;
 }
 
@@ -464,7 +464,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin-top: 15px;
+    margin-top: 10px;
     padding: 5px;
   }
 
