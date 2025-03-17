@@ -104,6 +104,11 @@ padding-top: 5px;
 .header_icons {
     height: 60px;
     width: 60px;
+    border-radius: 15px;
+}
+
+.muteIcon {
+    /* fill: var(--accent-color); */
 }
 
 #nameLogo{
@@ -813,11 +818,9 @@ h1 {
     right: 10px;
     user-select: none;
 }
-.sound-toggle.muted {
-    background: #999;
-    color: #666;
+.muted {
+    fill: var(--accent-color);
 }
-
 
 .placeholder {
     width: 35px;
