@@ -515,20 +515,33 @@ function startAnagramGame() {
         });
     }
 
+    let firstAttempt = true; // Чи це перша спроба для поточного слова
+    
     function checkWord() {
         if (selectedLetters.join('') === word) {
             correctSound.play();
+    
+            // Зараховуємо слово тільки якщо це перша спроба
+            if (firstAttempt) {
+                correctAnswers++;
+            }
+    
             nextWord();
         } else {
             wrongSound.play();
             wordContainer.classList.add('wrong');
             setTimeout(() => wordContainer.classList.remove('wrong'), 500);
+            
+            // Якщо була помилка, наступні спроби не будуть враховуватись
+            firstAttempt = false;
         }
     }
 
     function nextWord() {
         currentIndex++;
-        updateProgressBar(); // Оновлення шкали прогресу після складання слова
+        firstAttempt = true; // Скидаємо статус першої спроби
+    
+        updateProgressBar(); // Оновлення шкали прогресу
         
         if (currentIndex < shuffledWords.length) {
             startAnagramGame();
