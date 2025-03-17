@@ -254,8 +254,12 @@ function ChooseTranslate() {
 
         choices.forEach(choice => {
             let answerButton = document.createElement("li");
-            answerButton.textContent = choice;
+            let answerText = document.createElement("p"); // Створюємо тег <p>
+            
+            answerText.textContent = choice; // Додаємо текст у <p>
+            answerButton.appendChild(answerText); // Вставляємо <p> у <li>
             answerButton.classList.add("choose_button");
+            answerText.classList.add("text_button");
 
             answerButton.addEventListener("click", () => {
                 let isCorrect = choice === wordObj.translate;

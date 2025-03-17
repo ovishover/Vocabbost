@@ -207,7 +207,7 @@ section {
 }
 
 .sets_container {
-    width: 300px;
+    width: 320px;
 }
 
 /*  TRAINING SECTION */
@@ -276,7 +276,7 @@ section {
 
 }
 .name_button {
-    width: 130px;
+    padding: 15px;
     font-weight: 600;
     font-size: 18px;
 }
@@ -414,7 +414,7 @@ section {
 
 .trainCard, .resultStyles{
     height: 415px;
-    width: 300px;
+    width: 320px;
     padding: 20px 20px 30px 20px;
     border-radius: 15px;
     background-color: #ffffff;
@@ -487,8 +487,8 @@ section {
 /*  BUTTONS */
 .set_button{
     height: 60px;
-    width: 125px;
-    margin: 10px 0;
+    width: 135px;
+    margin: 5px 0;
     border-radius: 15px;
     display: block;
     align-content: center;
@@ -503,7 +503,7 @@ section {
 
 .anagram_button{
     height: 60px;
-    width: 100px;
+    width: 130px;
     margin: 10px 0;
     border-radius: 15px;
     display: flex;
@@ -518,7 +518,7 @@ section {
 
 .choose_button {
     height: 70px;
-    width: 140px;
+    width: 150px;
     margin: 10px 0;
     border-radius: 15px;
     display: flex;
@@ -768,7 +768,7 @@ h1 {
     background: white;
     border-radius: 10px;
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); */
-    width: 380px;
+    width: 360px;
     height: 150px;
 
 }
@@ -846,6 +846,10 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.2s;
+}
+
+.text_button{
+    padding: 15px;
 }
 
 button:hover {
