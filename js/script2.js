@@ -138,6 +138,22 @@ function endGame() {
     document.getElementById('result_menu').style.display = 'block';
 }
 
+
+
+let soundEnabled = true; // Переменная для отслеживания состояния звука
+const soundToggle = document.getElementById('soundToggle'); // Кнопка переключения
+
+if (soundToggle) {
+    soundToggle.addEventListener('click', () => {
+        soundEnabled = !soundEnabled;
+        soundToggle.classList.toggle('muted', !soundEnabled);
+
+        correctSound.volume = soundEnabled ? 1 : 0;
+        wrongSound.volume = soundEnabled ? 1 : 0;
+    });
+}
+
+
 function playSoundForCurrentWord() {
     if (Date.now() - lastClickTime < minInterval) return console.log("Занадто швидке натискання! Зачекайте.");
     lastClickTime = Date.now();
@@ -145,7 +161,11 @@ function playSoundForCurrentWord() {
     let wordObj = shuffledWords[currentIndex];
     if (!wordObj?.word) return console.error("Немає звуку для цього слова.");
     
-    new Audio(`./sounds/${wordObj.word}.mp3`).play();
+    if (soundEnabled) {
+        const audio = new Audio(`./sounds/${wordObj.word}.mp3`);
+        audio.currentTime = 0;
+        audio.play();
+    }
 }
 
 document.getElementById('playSoundBtn')?.addEventListener('click', playSoundForCurrentWord);
@@ -251,8 +271,9 @@ function ChooseTranslate() {
                     if (firstAttempt) {
                         firstAttemptCorrect++; // Якщо вірна відповідь з першої спроби
                     }
-
-                    correctSound.play();
+                    if (soundEnabled) {
+                        correctSound.play();
+                    }
                 } else {
                     wrongSound.play();
                     wordElement.classList.add("flash");
@@ -390,11 +411,16 @@ function tfDuel() {
         if (answerCorrect) {
             results.push({ word: shuffledWords[currentIndex].word, correct: true });
             firstAttemptCorrect++;
-            correctSound.play();
+            if (soundEnabled) {
+                correctSound.play();
+            }
             effectElement.classList.add("correct"); // Додаємо зелений ефект
         } else {
             results.push({ word: shuffledWords[currentIndex].word, correct: false });
-            wrongSound.play();
+            if (soundEnabled) {
+                wrongSound.play();
+            }
+            
             effectElement.classList.add("incorrect"); // Додаємо червоний ефект
             wordElement.classList.add("flash"); // Тряска слова при помилці
         }
@@ -519,7 +545,9 @@ function startAnagramGame() {
     
     function checkWord() {
         if (selectedLetters.join('') === word) {
-            correctSound.play();
+            if (soundEnabled) {
+                correctSound.play();
+            }
     
             // Зараховуємо слово тільки якщо це перша спроба
             if (firstAttempt) {
