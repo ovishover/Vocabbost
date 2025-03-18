@@ -208,7 +208,7 @@ section {
 }
 
 .sets_container {
-    width: 320px;
+    width: 360px;
 }
 
 /*  TRAINING SECTION */
@@ -274,7 +274,7 @@ section {
 
 .demoImg{
     /* display: block; */
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     align-items: center; 
 }
@@ -308,7 +308,9 @@ section {
 .cardIcon{
     display: flex;
     justify-content: center;
-    margin: 15px auto;
+    /* margin-top: 30px; */
+    padding-top: 40px;
+    padding-bottom: 50px;
     animation: scaleUpDown 2s ease-in-out infinite;
 }
 
@@ -335,7 +337,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 70px;
+    padding-top: 130px;
 }
 
 .cardBtn2{
@@ -343,7 +345,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding-top: 10px; */
+    padding-top: 80px;
 }
 
 .cardBtn3{
@@ -351,7 +353,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 75px;
+    padding-top: 150px;
     justify-content: space-around;
     width: 100%;
 }
@@ -361,7 +363,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding-top: 5px; */
+    padding-top: 25px;
     justify-content: space-around;
     width: 100%;
 }
@@ -387,7 +389,7 @@ section {
 }
 
 .target_word{
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 600;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -402,7 +404,7 @@ section {
 }
 
 .target_word2{
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 600;
     padding-top: 10px;
     height: 105px;
@@ -436,7 +438,7 @@ section {
 }
 
 .trainCard, .resultStyles{
-    height: 415px;
+    height: 495px;
     width: 320px;
     padding: 20px 20px 30px 20px;
     border-radius: 15px;
@@ -450,7 +452,7 @@ section {
 .anagramCard {
     height: 510px;
     width: 340px;
-    padding: 15px;
+    padding: 20px 15px 20px 15px;
     border-radius: 15px;
     background-color: #ffffff;
     /* display: none; */
@@ -511,7 +513,7 @@ section {
 /*  BUTTONS */
 .set_button{
     height: 70px;
-    width: 135px;
+    width: 140px;
     margin: 10px 0;
     border-radius: 15px;
     display: block;
@@ -643,7 +645,7 @@ section {
     z-index: 101;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 300px;
-    height: 620px;
+    height: 600px;
     z-index: 1000;
 }
 
@@ -664,7 +666,7 @@ section {
 .modal_btn_container{
 display: flex;
 justify-content: space-between;
-padding: 10px 10px 5px 10px;
+padding: 15px 10px 5px 10px;
 }
 
 /* Стиль для кнопки закриття модалки*/
@@ -742,16 +744,17 @@ padding: 10px 10px 5px 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid #407bff;
-    border-radius: 5px;
-    margin-top: 10px;
+    border: 1px solid #407cff62;
+    border-radius: 10px;
+    margin-top: 7px;
 }
 
 .list_item div {
     /* display: block; */
     width: 125px;
     font-size: 14px;
-    font-weight: 500;
+    color: #575757;
+    font-weight: 600;
     align-items: center;
     text-align: center;
     
@@ -792,23 +795,23 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: flex-start;
-    gap: 8px;
+    gap: 5px;
     padding: 5px;
     background: white;
     border-radius: 10px;
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); */
     /* width: 360px; */
-    height: 175px;
+    height: 120px;
 
 }
 
 .letter-block {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: bold;
     background-color: #007bff;
     color: white;
@@ -823,7 +826,7 @@ h1 {
 
 .word-container {
     display: flex;
-        gap: 5px;
+        gap: 3px;
         height: 110px;
         /* width: 380px; */
         /* padding: 10px; */
@@ -853,7 +856,7 @@ h1 {
 }
 
 .placeholder {
-    width: 22px;
+    width: 18px;
     height: 45px;
     display: flex;
     justify-content: center;
