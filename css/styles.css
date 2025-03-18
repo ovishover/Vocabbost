@@ -301,6 +301,7 @@ section {
 .cardWord {
     /* display: block; */
     justify-items: center;
+    /* width: 300px; */
     /* margin-top: 80px; */
     /* margin-bottom: 100px; */
 }
@@ -393,13 +394,13 @@ section {
     font-weight: 600;
     padding-top: 10px;
     padding-bottom: 10px;
-   
     align-content: center;
     letter-spacing: 0.05em;
     color: #5a5a5a;
     border-radius: 20px;
     height: 120px;
     justify-content: center;
+    /* width: 100%; */
 
 }
 

@@ -71,7 +71,7 @@ const wrongSound = new Audio('./sounds/wrong.mp3');
 
 
 const gameFunctions = {
-    1: startMemorizeGame,
+    1: MemorizeGame,
     2: ChooseTranslate,
     3: tfDuel,
     4: startAnagramGame
@@ -80,7 +80,7 @@ const gameFunctions = {
 
 function updateProgressBar() {
     if (!shuffledWords.length) return;
-    let progress = (currentIndex / shuffledWords.length) * 100; // Від 0 до 100%
+    let progress = ((currentIndex ) / shuffledWords.length) * 100;  
     document.querySelector('.header_progress').style.setProperty('--progress', `${progress}%`);
 }
 
@@ -194,7 +194,7 @@ async function loadTrainingWords() {
     }
 }
 
-function startMemorizeGame(index) {
+function MemorizeGame(index) {
     header.innerHTML = 'Memorize';
     let wordObj = shuffledWords[index];
     if (!wordObj) return console.error("Немає слова для показу.");
@@ -208,10 +208,11 @@ function showNextWord() {
     if (Date.now() - lastClickTime < minInterval) return console.log("Занадто швидке натискання!");
     lastClickTime = Date.now();
     
-    if (currentIndex < shuffledWords.length - 1) {
-        startMemorizeGame(++currentIndex);
+    if (currentIndex < (shuffledWords.length - 1)) {
+        MemorizeGame(++currentIndex);
         updateProgressBar(); // Оновлюємо лінію прогресу
     } else {
+        // updateProgressBar()
         endGame();
     }
 }
@@ -457,12 +458,42 @@ function tfDuel() {
 }
 
 
+
+// Функція для перемішування букв із дотриманням правил
+function shuffleLetters(word) {
+    let letters = word.split('');
+    let shuffled = [...letters];
+
+    function isValidShuffle(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === letters[i]) {
+                return false; // Літера не повинна залишатися на тому ж місці
+            }
+            if (i > 0 && letters.indexOf(arr[i]) === letters.indexOf(arr[i - 1]) + 1) {
+                return false; // Уникати сусідніх букв у вихідному слові
+            }
+        }
+        return true;
+    }
+
+    let maxAttempts = 100;
+    let attempts = 0;
+
+    do {
+        shuffled.sort(() => Math.random() - 0.5);
+        attempts++;
+    } while (!isValidShuffle(shuffled) && attempts < maxAttempts);
+
+    return shuffled;
+}
+
+// Функція запуску гри
 function startAnagramGame() {
     document.getElementById('header_title').innerText = 'Anagram';
-    
+
     const gameContainer = document.getElementById('anagramGame');
-    gameContainer.innerHTML = ''; 
-    
+    gameContainer.innerHTML = '';
+
     let wordObj = shuffledWords[currentIndex];
     if (!wordObj || !wordObj.word) {
         console.error("Немає слова для гри.");
@@ -470,8 +501,7 @@ function startAnagramGame() {
     }
 
     let word = wordObj.word.toUpperCase();
-    let letters = word.split('');
-    let shuffledLetters = [...letters].sort(() => Math.random() - 0.5);
+    let shuffledLetters = shuffleLetters(word);
 
     let lettersContainer = document.createElement('div');
     lettersContainer.id = 'lettersContainer';
@@ -493,7 +523,7 @@ function startAnagramGame() {
         document.getElementById('translation3').textContent = wordObj.translate;
     });
 
-    letters.forEach(() => {
+    word.split('').forEach(() => {
         let placeholder = document.createElement('div');
         placeholder.classList.add('placeholder');
         placeholders.push(placeholder);
@@ -529,7 +559,6 @@ function startAnagramGame() {
             }
         }
     }
-    
 
     function clearWord() {
         selectedLetters = [];
@@ -546,18 +575,18 @@ function startAnagramGame() {
     }
 
     let firstAttempt = true; // Чи це перша спроба для поточного слова
-    
+
     function checkWord() {
         if (selectedLetters.join('') === word) {
             if (soundEnabled) {
                 correctSound.play();
             }
-    
+
             // Зараховуємо слово тільки якщо це перша спроба
             if (firstAttempt) {
                 correctAnswers++;
             }
-    
+
             nextWord();
         } else {
             wrongSound.play();
@@ -572,9 +601,9 @@ function startAnagramGame() {
     function nextWord() {
         currentIndex++;
         firstAttempt = true; // Скидаємо статус першої спроби
-    
+
         updateProgressBar(); // Оновлення шкали прогресу
-        
+
         if (currentIndex < shuffledWords.length) {
             startAnagramGame();
         } else {
@@ -583,9 +612,6 @@ function startAnagramGame() {
             document.getElementById("resultCount").textContent = `${correctAnswers}/${shuffledWords.length}`;
         }
     }
-
-    // let undoButton = document.getElementById('undo_btn');
-    // undoButton.onclick = () => undoMove();
 
     let clearButton = document.getElementById('clear_btn');
     clearButton.onclick = () => clearWord();
@@ -598,6 +624,7 @@ function startAnagramGame() {
 
     updateProgressBar(); // Оновлення шкали прогресу на початку гри
 }
+
 
 
 
