@@ -1,6 +1,7 @@
 :root {
     /* --accent-color: #D7C6A8; */
     --accent-color: #407bff;
+    --accent-color2:#2e5dc5;
     /* --accent-color: #407bff; */
     --text-color: #aaaaaa;
     --text-color2: #ffffff;
@@ -25,16 +26,16 @@ footer {
     background-size: cover; /* Зображення покриває весь елемент */
     background-position: center; /* Центрує зображення */
     background-repeat: no-repeat; /* Забороняє повторення зображення */
-    height: 450px;
+    height: 380px;
   
 }
 
 .footer_div2{
-    background-image: url('../images/space4.svg');
+    background-image: url('../images/space8.svg');
     background-size: cover; /* Зображення покриває весь елемент */
     background-position: center; /* Центрує зображення */
     background-repeat: no-repeat; /* Забороняє повторення зображення */
-    height: 450px;
+    height: 380px;
  
 }
 
@@ -235,17 +236,33 @@ section {
     justify-content: center;
 }
 
+
 .cardName {
     display: flex;
     align-items: flex-end;
     padding-bottom: 18px;
     text-align: center;
+    /* font-family: helvetica; */
     color: var(--text-color);
     font-size: 18px;
     font-weight: 600;
-    width: 100%;
+    /* width: 100%; */
     justify-content: center;
 }
+
+.cardName2 {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 18px;
+    text-align: center;
+        font-family: serif;
+    color: var(--accent-color2);
+    font-size: 20px;
+    font-weight: 500;
+    /* width: 100%; */
+    justify-content: center;
+}
+
 
 .btnContain{
     height: 50px;
@@ -350,10 +367,12 @@ section {
 }
 
 #word, #word2 {
-    /* font-size: 40px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    letter-spacing: 0.05em; */
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
 }
 
 .correct-card {
@@ -371,12 +390,14 @@ section {
     font-weight: 600;
     padding-top: 10px;
     padding-bottom: 10px;
-    width: 300px;
+   
     align-content: center;
     letter-spacing: 0.05em;
     color: #5a5a5a;
     border-radius: 20px;
     height: 120px;
+    justify-content: center;
+
 }
 
 .target_word2{
@@ -488,7 +509,7 @@ section {
 
 /*  BUTTONS */
 .set_button{
-    height: 60px;
+    height: 70px;
     width: 135px;
     margin: 10px 0;
     border-radius: 15px;
