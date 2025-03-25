@@ -1,0 +1,50 @@
+1. cabbage - Успішно завантажено
+2. lettuce - Успішно завантажено
+3. pie - Успішно завантажено
+4. cherry - Успішно завантажено
+5. cucumber - Успішно завантажено
+6. grapefruit - Успішно завантажено
+7. nut - Успішно завантажено
+8. peach - Успішно завантажено
+9. pineapple - Успішно завантажено
+10. plum - Успішно завантажено
+11. raspberry - Успішно завантажено
+12. roll - Успішно завантажено
+13. vegetarian - Успішно завантажено
+14. alcoholic - Успішно завантажено
+15. olive - Успішно завантажено
+16. bacon - Успішно завантажено
+17. bitter - Успішно завантажено
+18. broccoli - Успішно завантажено
+19. Cheers! - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/Cheers!
+20. flour - Успішно завантажено
+21. French fries - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/French%20fries
+22. hot - Успішно завантажено
+23. hunger - Успішно завантажено
+24. mayonnaise - Успішно завантажено
+25. raw - Успішно завантажено
+26. sour - Успішно завантажено
+27. bite - Успішно завантажено
+28. fry - Успішно завантажено
+29. grill - Успішно завантажено
+30. mix - Успішно завантажено
+31. taste - Успішно завантажено
+32. balcony - Успішно завантажено
+33. basket - Успішно завантажено
+34. bell - Успішно завантажено
+35. board - Успішно завантажено
+36. bowl - Успішно завантажено
+37. bucket - Успішно завантажено
+38. coffee maker - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/coffee%20maker
+39. cupboard - Успішно завантажено
+40. gap - Успішно завантажено
+41. pan - Успішно завантажено
+42. pot - Успішно завантажено
+43. faucet - Успішно завантажено
+44. vase - Успішно завантажено
+45. air conditioning - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/air%20conditioning
+46. elevator - Успішно завантажено
+47. housework - Успішно завантажено
+48. huge - Успішно завантажено
+49. stairs - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/stairs
+50. freeze - Успішно завантажено
