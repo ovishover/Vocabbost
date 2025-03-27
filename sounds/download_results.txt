@@ -1,0 +1,30 @@
+361. mouth - Успішно завантажено
+362. tooth - Успішно завантажено
+363. lip - Успішно завантажено
+364. tongue - Успішно завантажено
+365. chin - Успішно завантажено
+366. throat - Успішно завантажено
+367. top - Успішно завантажено
+368. T-shirt - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/T-shirt
+369. long sleeve shirt - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/long%20sleeve%20shirt
+370. polo - Успішно завантажено
+371. singlet - Успішно завантажено
+372. corset - Успішно завантажено
+373. blouse - Успішно завантажено
+374. shirt - Успішно завантажено
+375. jacket - Успішно завантажено
+376. shorts - Успішно завантажено
+377. poncho - Успішно завантажено
+378. skirt - Успішно завантажено
+379. handbag - Успішно завантажено
+380. dress - Успішно завантажено
+381. sarafan/sundress - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/sarafan/sundress
+382. waistcoat - Успішно завантажено
+383. brassiere - Успішно завантажено
+384. slip - Успішно завантажено
+385. bikini - Успішно завантажено
+386. tights - Успішно завантажено
+387. fishnet stockings - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/fishnet%20stockings
+388. boots - Успішно завантажено
+389. court shoes - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/court%20shoes
+390. sandals - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/sandals
