@@ -1,30 +1,45 @@
-361. mouth - Успішно завантажено
-362. tooth - Успішно завантажено
-363. lip - Успішно завантажено
-364. tongue - Успішно завантажено
-365. chin - Успішно завантажено
-366. throat - Успішно завантажено
-367. top - Успішно завантажено
-368. T-shirt - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/T-shirt
-369. long sleeve shirt - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/long%20sleeve%20shirt
-370. polo - Успішно завантажено
-371. singlet - Успішно завантажено
-372. corset - Успішно завантажено
-373. blouse - Успішно завантажено
-374. shirt - Успішно завантажено
-375. jacket - Успішно завантажено
-376. shorts - Успішно завантажено
-377. poncho - Успішно завантажено
-378. skirt - Успішно завантажено
-379. handbag - Успішно завантажено
-380. dress - Успішно завантажено
-381. sarafan/sundress - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/sarafan/sundress
-382. waistcoat - Успішно завантажено
-383. brassiere - Успішно завантажено
-384. slip - Успішно завантажено
-385. bikini - Успішно завантажено
-386. tights - Успішно завантажено
-387. fishnet stockings - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/fishnet%20stockings
-388. boots - Успішно завантажено
-389. court shoes - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/court%20shoes
-390. sandals - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/sandals
+546. radiator grill - ok
+547. number plate - ok
+548. front-wheel drive - ok
+549. tyre - Успішно завантажено
+550. wheel сар - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/wheel%20%D1%81%D0%B0%D1%80
+551. headrest - Успішно завантажено
+552. seat belt - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/seat%20belt
+553. seat - Успішно завантажено
+554. sunshade - Успішно завантажено
+555. rear view mirror - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/rear%20view%20mirror
+556. steering wheel - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/steering%20wheel
+557. dashboard - Успішно завантажено
+558. horn - Успішно завантажено
+559. ignition - Успішно завантажено
+560. window raiser - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/window%20raiser
+561. clutch pedal - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/clutch%20pedal
+562. brake pedal - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/brake%20pedal
+563. gas pedal - ok
+564. audio system - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/audio%20system
+565. handbrake - Успішно завантажено
+566. gear lever - ok
+567. glove compartment - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/glove%20compartment
+568. bicycle pump - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/bicycle%20pump
+569. bell - Успішно завантажено
+570. handle bar - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/handle%20bar
+571. brake - Успішно завантажено
+572. bike lock - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/bike%20lock
+573. helmet - Успішно завантажено
+574. carrier - Успішно завантажено
+575. saddle - Успішно завантажено
+576. rear light - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/rear%20light
+577. frame - Успішно завантажено
+578. mudguard - Успішно завантажено
+579. cat's eye - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/cat's%20eye
+580. spanner - Успішно завантажено
+581. gear change - ok
+582. headlight - Успішно завантажено
+583. seatpost - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/seatpost
+584. rear shock - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/rear%20shock
+585. fork - Успішно завантажено
+586. front wheel - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/front%20wheel
+587. rear wheel - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/rear%20wheel
+588. rear derailleur - Помилка: 404 Client Error: Not Found for url: https://www.oxfordlearnersdictionaries.com/definition/english/rear%20derailleur
+589. chain - Успішно завантажено
+590. pedal - Успішно завантажено
