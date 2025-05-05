@@ -9,7 +9,7 @@ async function loadWords() {
         const words = await response.json();
 
         // Формуємо унікальні набори
-        const sets = [...new Set(words.map(w => w.set))].sort();
+        const sets = [...new Set(words.map(w => Number(w.set)))].sort((a, b) => a - b);
         const container = document.getElementById('sets');
         
         if (!container) {
@@ -21,30 +21,29 @@ async function loadWords() {
         sets.forEach(set => {
             const btn = document.createElement('li');
             btn.className = 'set_button openModalBtn';
-            
-            // Знаходимо категорію (припускаємо, що всі слова в сеті мають одну категорію)
-             category = words.find(word => word.set === set)?.category || 'Unknown';
-            
-            // Створюємо елементи <p> з класом стилів
+        
+            // Визначаємо категорію для цього сета
+            const setCategory = words.find(word => Number(word.set) === set)?.category || 'Unknown';
+        
             const pSet = document.createElement('p');
             pSet.textContent = `Set: ${set}`;
             pSet.classList.add('set_info');
-            
+        
             const pCategory = document.createElement('p');
-            pCategory.textContent = `${category}`;
+            pCategory.textContent = `${setCategory}`;
             pCategory.classList.add('category_info');
-            
-            // Додаємо їх до <li>
+        
             btn.appendChild(pSet);
             btn.appendChild(pCategory);
-
+        
             btn.onclick = () => {
-                const wordList = words.filter(word => word.set === set);
-                openModal(set, wordList);
+                const wordList = words.filter(word => Number(word.set) === set);
+                openModal(set, wordList, setCategory); // ← передаємо категорію
             };
-            
+        
             container.appendChild(btn);
         });
+        
     } catch (error) {
         console.error("Помилка при завантаженні даних:", error);
     }
@@ -54,7 +53,7 @@ loadWords(); // викликаємо функцію завантаження с�
 
 
 // ======== ФУНКЦІЯ ВІДКРИТТЯ МОДАЛКИ ========
-function openModal(set, words) {
+function openModal(set, words, category) {
     const modal = document.getElementById('modal');
     const backdrop = document.getElementById('backdrop');
     const modalTitle = document.getElementById('modalTitle');

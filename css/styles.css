@@ -641,11 +641,11 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgb(255 255 255);
-    padding: 30px;
+    padding: 15px;
     border-radius: 15px;
     z-index: 101;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 340px;
     /* height: 600px; */
     z-index: 1000;
 }
@@ -696,7 +696,7 @@ section {
 #modalTitle {
     margin-left: 10px;
     color: var(--text-color);
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 600;
 }
 
@@ -751,7 +751,7 @@ section {
 
 .list_item div {
     /* display: block; */
-    width: 125px;
+    width: 165px;
     font-size: 14px;
     color: #575757;
     font-weight: 600;
